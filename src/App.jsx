@@ -263,7 +263,7 @@ function TeamPage() {
               const lanyardCard = (
                 <div key={`${m.name}-lanyard`} className="team-lanyard-container">
                   <Lanyard
-                    position={[0, 0, 18]}
+                    position={[0, 0, 12]}
                     gravity={[0, -35, 0]}
                     frontImage={m.avatarUrl}
                     backImage="/favicon.svg"
