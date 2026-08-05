@@ -683,7 +683,7 @@ section { padding: 7rem 2rem; }
   gap: 4rem;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .team-row {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1202,7 +1202,7 @@ section { padding: 7rem 2rem; }
   border-radius: 20px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .about-split-row {
     grid-template-columns: 1fr;
     gap: 3rem;

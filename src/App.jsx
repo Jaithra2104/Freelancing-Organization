@@ -165,6 +165,15 @@ function DomainsPage() {
 
 // ── TEAM PAGE ──
 function TeamPage() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <PageWrapper className="team-page">
       <section className="team" id="team">
@@ -260,7 +269,7 @@ function TeamPage() {
                 </div>
               );
 
-              const lanyardCard = (
+              const lanyardCard = isMobile ? null : (
                 <div key={`${m.name}-lanyard`} className="team-lanyard-container">
                   <Lanyard
                     position={[0, 0, 12]}

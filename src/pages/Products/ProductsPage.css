@@ -272,7 +272,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .browser-viewport {
     height: 300px;
   }
