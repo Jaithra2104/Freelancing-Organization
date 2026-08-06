@@ -29,14 +29,17 @@ import './index.css';
 
 const team = [
   {
-    initials: 'AK',
-    name: 'Arjun Kapoor',
-    role: 'CEO & Co-Founder',
-    bio: 'Former Google Brain researcher with 12 years in AI systems and enterprise software.',
+    initials: 'AJ',
+    name: 'Addepalli jaithra srivaatsava',
+    role: 'backend architect/resource manager',
+    bio: 'a good background in the backend development and building amazing websites',
     avatarUrl: '/avatars/jaithra.jpeg',
-    handle: 'arjun_ai',
+    handle: 'jaithra_s',
     status: 'Building',
-    behindGlowColor: 'rgba(167, 139, 250, 0.5)'
+    behindGlowColor: 'rgba(167, 139, 250, 0.5)',
+    email: 'jaithraaddepalli17@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/jaithra-addepalli-510292334',
+    mobile: '7702239591'
   },
   {
     initials: 'PR',
@@ -259,11 +262,22 @@ function TeamPage() {
                   <div className="team-info-handle">@{m.handle}</div>
 
                   <div className="team-info-actions">
-                    <button className="contact-action-btn">Send Message</button>
+                    {m.email ? (
+                      <a href={`mailto:${m.email}`} className="contact-action-btn" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Send Message</a>
+                    ) : (
+                      <button className="contact-action-btn">Send Message</button>
+                    )}
                     <div className="team-info-socials">
-                      {['𝕏', 'in', 'gh'].map((s, i) => (
-                        <a key={i} href="#" className="team-social-link">{s}</a>
-                      ))}
+                      {m.linkedin ? (
+                        <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="team-social-link">in</a>
+                      ) : (
+                        <a href="#" className="team-social-link">in</a>
+                      )}
+                      {m.mobile && (
+                        <a href={`tel:${m.mobile}`} className="team-social-link">📞</a>
+                      )}
+                      <a href="#" className="team-social-link">𝕏</a>
+                      <a href="#" className="team-social-link">gh</a>
                     </div>
                   </div>
                 </div>
