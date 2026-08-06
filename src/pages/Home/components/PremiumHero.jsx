@@ -83,10 +83,10 @@ export default function PremiumHero() {
         transition={{ duration: 0.8, delay: 1 }}
       >
         <MagneticButton to="/contact" className="btn-primary">
-          Start Your Project →
+          Book a free consultation →
         </MagneticButton>
-        <MagneticButton to="/portfolio" className="btn-secondary">
-          View Portfolio
+        <MagneticButton to="/products" className="btn-secondary">
+          View our work
         </MagneticButton>
       </motion.div>
     </div>
