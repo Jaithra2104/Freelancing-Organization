@@ -34,6 +34,7 @@ const team = [
     role: 'backend architect/resource manager',
     bio: 'a good background in the backend development and building amazing websites',
     avatarUrl: '/avatars/jaithra.jpeg',
+    idCardImage: '/avatars/jaithra_id.png',
     handle: 'jaithra_s',
     status: 'Building',
     behindGlowColor: 'rgba(167, 139, 250, 0.5)',
@@ -286,7 +287,7 @@ function TeamPage() {
                   <Lanyard
                     position={[0, 0, 12]}
                     gravity={[0, -35, 0]}
-                    frontImage={m.avatarUrl}
+                    frontImage={m.idCardImage || m.avatarUrl}
                     backImage="/favicon.svg"
                     imageFit="cover"
                     lanyardWidth={0.8}
