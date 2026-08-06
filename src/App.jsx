@@ -7,6 +7,7 @@ import SplitText from './components/SplitText';
 import LogoLoop from './components/LogoLoop';
 import PillNav from './components/PillNav';
 import Lanyard from './components/Lanyard';
+import ProfileCard from './components/ProfileCard';
 import StrokeText from './components/StrokeText';
 import AboutPage from './pages/About/AboutPage';
 import HomePage from './pages/Home/HomePage';
@@ -217,55 +218,19 @@ function TeamPage() {
             {team.map((m, idx) => {
               const isEven = idx % 2 === 0;
               const infoCard = (
-                <div key={`${m.name}-info`} className="team-info-card">
-                  <div className="team-info-glow" style={{ background: m.behindGlowColor }} />
-                  <span className="team-status-pill">
-                    <span className="status-dot" /> {m.status}
-                  </span>
-
-                  <div className="team-name-split-wrap">
-                    <SplitText
-                      text={m.name}
-                      tag="h3"
-                      className="team-info-name"
-                      delay={25}
-                      duration={0.75}
-                      ease="back.out(1.4)"
-                      splitType="chars"
-                      from={{ opacity: 0, y: 20 }}
-                      to={{ opacity: 1, y: 0 }}
-                      threshold={0.2}
-                      textAlign="left"
-                    />
-                  </div>
-
-                  <div className="team-role-split-wrap">
-                    <SplitText
-                      text={m.role}
-                      tag="div"
-                      className="team-info-role"
-                      delay={20}
-                      duration={0.6}
-                      ease="power2.out"
-                      splitType="words"
-                      from={{ opacity: 0, y: 10 }}
-                      to={{ opacity: 1, y: 0 }}
-                      threshold={0.2}
-                      textAlign="left"
-                    />
-                  </div>
-
-                  <p className="team-info-bio">{m.bio}</p>
-                  <div className="team-info-handle">@{m.handle}</div>
-
-                  <div className="team-info-actions">
-                    <button className="contact-action-btn">Send Message</button>
-                    <div className="team-info-socials">
-                      {['𝕏', 'in', 'gh'].map((s, i) => (
-                        <a key={i} href="#" className="team-social-link">{s}</a>
-                      ))}
-                    </div>
-                  </div>
+                <div key={`${m.name}-info`} className="team-info-card-wrapper" style={{ width: '100%', maxWidth: '380px', margin: '0 auto' }}>
+                  <ProfileCard
+                    name={m.name}
+                    title={m.role}
+                    handle={m.handle}
+                    status={m.status}
+                    avatarUrl={m.avatarUrl}
+                    miniAvatarUrl={m.avatarUrl}
+                    contactText="Send Message"
+                    behindGlowColor={m.behindGlowColor}
+                    enableTilt={!isMobile}
+                    enableMobileTilt={false}
+                  />
                 </div>
               );
 
