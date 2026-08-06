@@ -63,7 +63,7 @@ const team = [
   },
   {
     initials: 'GS',
-    name: 'gunda sai teja',
+    name: 'Gunda Sai Teja',
     role: 'QA engineer',
     bio: 'Dedicated to delivering flawless user experiences. Specialized in automated testing and continuous integration.',
     avatarUrl: '/avatars/jaithra.jpeg',
@@ -77,7 +77,7 @@ const team = [
   },
   {
     initials: 'PC',
-    name: 'penda chandini',
+    name: 'Penda Chandini',
     role: 'Frontend/UI-UX',
     bio: 'Crafting beautiful, intuitive interfaces. Obsessed with pixel-perfect designs and engaging user journeys.',
     avatarUrl: '/avatars/jaithra.jpeg',
@@ -176,7 +176,7 @@ function PageWrapper({ children, className = '' }) {
 // ── TEAM PAGE ──
 function TeamPage() {
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
-  
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -340,7 +340,7 @@ function ContactPage() {
   ];
 
   const toggleInterest = (id) => {
-    setSelectedInterests(prev => 
+    setSelectedInterests(prev =>
       prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
     );
   };
@@ -424,9 +424,9 @@ function ContactPage() {
                   {interestsList.map(item => {
                     const isActive = selectedInterests.includes(item.id);
                     return (
-                      <button 
-                        key={item.id} 
-                        type="button" 
+                      <button
+                        key={item.id}
+                        type="button"
                         className={`interest-pill ${isActive ? 'active' : ''}`}
                         onClick={() => toggleInterest(item.id)}
                       >
@@ -457,11 +457,11 @@ function ContactPage() {
                 <label htmlFor="message">Message / Project Details <span className="req">*</span></label>
                 <div className="input-with-icon align-top">
                   <FiMessageSquare className="input-icon textarea-icon" />
-                  <textarea 
-                    id="message" 
-                    rows="4" 
-                    placeholder="Tell us about your project, goals, timeline, or any specific requirements..." 
-                    required 
+                  <textarea
+                    id="message"
+                    rows="4"
+                    placeholder="Tell us about your project, goals, timeline, or any specific requirements..."
+                    required
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     maxLength={1000}
@@ -497,7 +497,7 @@ function ContactPage() {
               <button type="submit" className="btn-submit btn-submit-advanced">
                 Send Message →
               </button>
-              
+
               <div className="form-footer-disclaimer">
                 By submitting this form, you agree to our <a href="#">Privacy Policy</a>.
               </div>
