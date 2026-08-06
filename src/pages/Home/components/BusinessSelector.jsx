@@ -119,7 +119,7 @@ export default function BusinessSelector() {
                 ))}
               </div>
               
-              <Link to="/contact" className="preview-btn">
+              <Link to="/products" className="preview-btn">
                 View Live Demo →
               </Link>
             </motion.div>
