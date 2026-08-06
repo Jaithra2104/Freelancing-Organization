@@ -89,13 +89,13 @@ function App() {
   }, [location.pathname]);
 
   const navItems = [
-    { label: 'HOME', href: '/' },
-    { label: 'SERVICES', href: '/services' },
-    { label: 'PRODUCTS', href: '/products' },
-    { label: 'PRICING', href: '/pricing' },
-    { label: 'ABOUT', href: '/about' },
-    { label: 'TEAM', href: '/team' },
-    { label: 'CONTACT', href: '/contact' }
+    { label: '🏠 HOME', href: '/' },
+    { label: '💼 SERVICES', href: '/services' },
+    { label: '🖥️ DEMO WEBSITES', href: '/products' },
+    { label: '💰 PRICING', href: '/pricing' },
+    { label: '🏢 ABOUT', href: '/about' },
+    { label: '👥 TEAM', href: '/team' },
+    { label: '📞 CONTACT', href: '/contact' }
   ];
 
   return (
