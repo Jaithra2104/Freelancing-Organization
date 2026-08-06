@@ -29,7 +29,7 @@ export const industryDemos = [
     description: 'Professional medical shop websites to display medicines, services, contact information and customer enquiries.',
     image: 'https://images.unsplash.com/photo-1584308666744-24d5e471d48c?q=80&w=1200&auto=format&fit=crop',
     plans: {
-      basic: null,
+      basic: 'https://medical-store-basic-plan.vercel.app/',
       pro: null,
       premium: null,
       ultra: null
