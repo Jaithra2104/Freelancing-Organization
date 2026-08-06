@@ -18,11 +18,11 @@ import {
   SiDocker, SiKubernetes, SiTerraform, SiGraphql,
   SiPostgresql, SiRedis, SiGithub, SiGooglecloud, SiMongodb,
 } from 'react-icons/si';
-import { FaAws } from 'react-icons/fa';
+import { FaAws, FaRupeeSign } from 'react-icons/fa';
 import {
   FiUser, FiMail, FiPhone, FiBriefcase, FiGlobe, FiCode,
   FiShoppingCart, FiTrendingUp, FiPenTool, FiCpu, FiMoreHorizontal,
-  FiDollarSign, FiMessageSquare, FiCheckCircle, FiZap, FiShield, FiXCircle
+  FiMessageSquare, FiCheckCircle, FiZap, FiShield, FiXCircle
 } from 'react-icons/fi';
 import './index.css';
 
@@ -444,13 +444,13 @@ function ContactPage() {
               <div className="form-group">
                 <label htmlFor="budget">Project Budget (Optional)</label>
                 <div className="input-with-icon">
-                  <FiDollarSign className="input-icon" />
+                  <FaRupeeSign className="input-icon" />
                   <select id="budget" className="budget-select">
                     <option value="">Select your budget range</option>
-                    <option value="under5k">Under $5,000</option>
-                    <option value="5k-10k">$5,000 - $10,000</option>
-                    <option value="10k-25k">$10,000 - $25,000</option>
-                    <option value="25k+">$25,000+</option>
+                    <option value="under10k">Under ₹10,000</option>
+                    <option value="10k-25k">₹10,000 - ₹25,000</option>
+                    <option value="25k-50k">₹25,000 - ₹50,000</option>
+                    <option value="50k+">₹50,000+</option>
                   </select>
                 </div>
               </div>
