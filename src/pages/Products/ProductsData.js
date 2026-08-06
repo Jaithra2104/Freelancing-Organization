@@ -35,7 +35,7 @@ export const industryDemos = [
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop',
     plans: {
       basic: 'https://medical-store-basic-plan.vercel.app/',
-      pro: null,
+      pro: 'https://medical-store-pro.vercel.app/',
       premium: null,
       ultra: null
     }
