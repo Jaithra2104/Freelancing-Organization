@@ -38,7 +38,9 @@ export default function IndustryShowcaseCards({ industries }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-10%' }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+                style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
               >
+                {industry.icon && <industry.icon style={{ color: '#A78BFA' }} />}
                 {industry.title}
               </motion.h3>
               <motion.p 
