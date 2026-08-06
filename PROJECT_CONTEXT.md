@@ -37,5 +37,6 @@ Never build huge monolithic components in `App.jsx`.
 2. **`CountUp`:** Statistics animation component.
 3. **`FloatingElements`:** Pattern of using absolute divs with slow, infinite repeating `y` and `rotate` transforms for ambient background motion.
 4. **`BusinessSelector`:** A pattern for vertical selection tabs driving a complex right-side UI (Live Browser Mockup).
+5. **Legal Center (`src/pages/Legal/`)**: Comprehensive legal pages sharing a common design pattern with reusable components (`LegalHero`, `SummaryCard`, `PolicyAccordion`). Includes a global `Footer`.
 
-*Last Updated: Hero Page Enhancements Delivery*
+*Last Updated: Legal Center Delivery*

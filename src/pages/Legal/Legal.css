@@ -1,0 +1,398 @@
+.legal-page-container {
+  min-height: 100vh;
+  background-color: var(--bg-950, #06040F);
+  color: var(--text-primary, #F8FAFC);
+  overflow-x: hidden;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+/* Background Effects */
+.legal-bg-glow {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 80vh;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.legal-bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.legal-content-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+}
+
+/* ── HERO ── */
+.legal-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.legal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: var(--purple-300, #C4B5FD);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.legal-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #ffffff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.legal-desc {
+  font-size: 1.15rem;
+  color: var(--text-muted, #94A3B8);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.legal-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted, #94A3B8);
+}
+
+.legal-meta span strong {
+  color: var(--text-primary, #F8FAFC);
+  margin-right: 0.5rem;
+}
+
+/* ── SUMMARY CARDS ── */
+.legal-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.legal-summary-card {
+  background: rgba(15, 12, 29, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-summary-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(139,92,246,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.legal-summary-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+}
+
+.legal-summary-card:hover::before {
+  opacity: 1;
+}
+
+.legal-summary-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--purple-400, #A78BFA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.legal-summary-text {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary, #F8FAFC);
+  z-index: 1;
+}
+
+/* ── CONTENT SECTION (Accordion) ── */
+.legal-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.legal-accordion {
+  background: rgba(15, 12, 29, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.legal-accordion:hover {
+  border-color: rgba(139, 92, 246, 0.2);
+  background: rgba(15, 12, 29, 0.6);
+}
+
+.legal-accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: none;
+  border: none;
+  color: var(--text-primary, #F8FAFC);
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  text-align: left;
+}
+
+.legal-accordion-icon {
+  color: var(--purple-400, #A78BFA);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.legal-accordion-icon.open {
+  transform: rotate(180deg);
+}
+
+.legal-accordion-content {
+  padding: 0 2rem 1.5rem;
+  color: var(--text-muted, #94A3B8);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.legal-accordion-content p {
+  margin-bottom: 1rem;
+}
+.legal-accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── CONTACT CARD (Need Help) ── */
+.legal-contact-card {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(15, 12, 29, 0.8));
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-contact-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(139,92,246,0.15) 0%, transparent 50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.legal-contact-card-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.legal-contact-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.legal-contact-card p {
+  color: var(--text-muted, #94A3B8);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.legal-contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-legal-primary {
+  background: var(--purple-600, #7C3AED);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-legal-primary:hover {
+  background: var(--purple-500, #8B5CF6);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-legal-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-legal-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ── CTA SECTION ── */
+.legal-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legal-cta h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #fff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.legal-cta p {
+  color: var(--text-muted, #94A3B8);
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+/* ── GLOBAL FOOTER ── */
+.global-footer {
+  background: #0B0C10;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 4rem 2rem 2rem;
+  margin-top: auto;
+}
+
+.global-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.global-footer-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.global-footer-logo span {
+  color: var(--purple-400, #A78BFA);
+}
+
+.global-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.global-footer-links a {
+  color: var(--text-muted, #94A3B8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.global-footer-links a:hover {
+  color: var(--purple-400, #A78BFA);
+}
+
+.global-footer-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.4);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .global-footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

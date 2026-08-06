@@ -13,6 +13,11 @@ import HomePage from './pages/Home/HomePage';
 import ServicesPage from './pages/Services/ServicesPage';
 import PricingPage from './pages/Pricing/PricingPage';
 import ProductsPage from './pages/Products/ProductsPage';
+import PrivacyPolicy from './pages/Legal/PrivacyPolicy';
+import TermsAndConditions from './pages/Legal/TermsAndConditions';
+import RefundPolicy from './pages/Legal/RefundPolicy';
+import CookiePolicy from './pages/Legal/CookiePolicy';
+import Footer from './components/Footer';
 import {
   SiReact, SiNextdotjs, SiTypescript, SiPython, SiRust,
   SiDocker, SiKubernetes, SiTerraform, SiGraphql,
@@ -133,25 +138,14 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
       </Routes>
 
       {/* ── FOOTER ── */}
-      {location.pathname !== '/' && (
-        <footer className="footer">
-          <div className="footer-inner">
-            <div className="footer-logo">
-              <span className="footer-logo-icon">⬡</span>
-              <span className="footer-logo-text">Nexara<span>AI</span></span>
-            </div>
-            <p className="footer-copy">© 2025 NexaraAI, Inc. All rights reserved.</p>
-            <div className="footer-socials">
-              {['𝕏', 'in', 'gh', '▶'].map((s, i) => (
-                <a key={i} href="#" className="social-btn">{s}</a>
-              ))}
-            </div>
-          </div>
-        </footer>
-      )}
+      {location.pathname !== '/' && <Footer />}
     </>
   );
 }
