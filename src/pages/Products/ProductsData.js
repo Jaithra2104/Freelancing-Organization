@@ -47,7 +47,7 @@ export const industryDemos = [
     description: 'Beautiful nursery websites with plant galleries, product showcases and customer enquiry features.',
     image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop',
     plans: {
-      basic: null,
+      basic: 'https://nursery-basic-beta.vercel.app/',
       pro: null,
       premium: null,
       ultra: null
