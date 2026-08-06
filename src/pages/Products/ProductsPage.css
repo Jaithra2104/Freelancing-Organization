@@ -104,7 +104,7 @@
   display: flex;
   align-items: stretch;
   gap: 0;
-  min-height: 450px;
+  min-height: 380px;
 }
 
 /* Row Direction Logic */
@@ -174,7 +174,7 @@
   flex: 1;
   overflow: hidden;
   background: #000;
-  min-height: 350px;
+  min-height: 280px;
 }
 
 .mockup-img {
@@ -213,7 +213,7 @@
 /* Details Area */
 .showcase-details-area {
   flex: 1;
-  padding: 4rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -290,7 +290,7 @@
 /* Responsive */
 @media (max-width: 1280px) {
   .showcase-details-area {
-    padding: 3rem;
+    padding: 2.5rem;
   }
   .showcase-title {
     font-size: 2rem;
@@ -309,7 +309,7 @@
   }
 
   .browser-viewport {
-    min-height: 400px;
+    min-height: 320px;
   }
 }
 

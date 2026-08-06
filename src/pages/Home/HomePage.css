@@ -556,4 +556,20 @@
   .cursor-spotlight {
     display: none;
   }
+  /* Hide floating elements on mobile to prevent overlapping messy text */
+  .floating-elements-container {
+    display: none !important;
+  }
+  /* Reduce huge gaps on mobile for a tighter layout */
+  .lower-hero-container {
+    padding: 2rem 1.5rem 4rem;
+    gap: 3rem;
+  }
+  /* Ensure the text doesn't overflow */
+  .hero__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  .premium-divider {
+    margin: 2rem 0;
+  }
 }
