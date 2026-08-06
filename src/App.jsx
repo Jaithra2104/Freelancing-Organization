@@ -91,6 +91,16 @@ const team = [
   }
 ];
 
+const navItems = [
+  { label: 'HOME', href: '/' },
+  { label: 'SERVICES', href: '/services' },
+  { label: 'DEMO WEBSITES', href: '/products' },
+  { label: 'PRICING', href: '/pricing' },
+  { label: 'ABOUT', href: '/about' },
+  { label: 'TEAM', href: '/team' },
+  { label: 'CONTACT', href: '/contact' }
+];
+
 function App() {
   const location = useLocation();
   const activeSection = location.pathname;
@@ -100,15 +110,7 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 
-  const navItems = [
-    { label: 'HOME', href: '/' },
-    { label: 'SERVICES', href: '/services' },
-    { label: 'DEMO WEBSITES', href: '/products' },
-    { label: 'PRICING', href: '/pricing' },
-    { label: 'ABOUT', href: '/about' },
-    { label: 'TEAM', href: '/team' },
-    { label: 'CONTACT', href: '/contact' }
-  ];
+
 
   return (
     <>
