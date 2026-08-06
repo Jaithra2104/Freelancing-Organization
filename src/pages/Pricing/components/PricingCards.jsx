@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export default function PricingCards({ plans }) {
   return (
@@ -36,9 +37,9 @@ export default function PricingCards({ plans }) {
             ))}
           </div>
 
-          <button className={`pricing-btn ${plan.popular ? 'primary' : 'secondary'}`}>
+          <Link to="/contact" className={`pricing-btn ${plan.popular ? 'primary' : 'secondary'}`} style={{ textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             {plan.buttonText}
-          </button>
+          </Link>
         </motion.div>
       ))}
     </div>
