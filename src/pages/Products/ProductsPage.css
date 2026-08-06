@@ -83,202 +83,85 @@
   margin: 0 auto;
 }
 
-/* ── SHOWCASE FULL-SCREEN SECTIONS ── */
-.showcase-cards-container {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Full screen section */
-.showcase-fullscreen-section {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-}
-
-/* Background watermark title */
-.showcase-watermark {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 15vw;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.02);
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 0;
-  font-family: 'Space Grotesk', sans-serif;
-  letter-spacing: -0.05em;
-}
-
-.showcase-content-grid {
-  position: relative;
-  z-index: 2;
+/* ── SHOWCASE FOLDERS GRID ── */
+.showcase-folders-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: 1400px;
-  width: 100%;
-  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
-.section-even .showcase-content-grid {
-  grid-template-columns: 1fr 1fr;
-}
-
-.section-odd .showcase-content-grid {
-  grid-template-columns: 1fr 1fr;
-  direction: rtl; /* simple way to reverse order visually */
-}
-
-.section-odd .showcase-content-grid > * {
-  direction: ltr; /* fix child text direction */
-}
-
-/* 3D Mockup Container */
-.showcase-mockup-side {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Details Panel */
-.showcase-details-side {
-  padding: 3rem;
+.showcase-folder-card {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 24px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  min-height: 450px;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.showcase-section-title {
-  font-size: 3rem;
+.showcase-folder-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.folder-card-header {
+  margin-bottom: 2rem;
+}
+
+.folder-industry-title {
+  font-size: 2rem;
   font-weight: 800;
   color: #fff;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
+  margin-bottom: 1rem;
   font-family: 'Space Grotesk', sans-serif;
 }
 
-.showcase-section-desc {
-  font-size: 1.15rem;
+.folder-industry-desc {
+  font-size: 1rem;
   color: #94A3B8;
-  line-height: 1.7;
-  margin-bottom: 3rem;
+  line-height: 1.6;
 }
 
-/* Plans Grid */
-.showcase-plans-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-
-.plan-item {
+.folder-interaction-area {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-}
-
-.plan-label {
-  font-size: 1rem;
-  color: #E2E8F0;
-  font-weight: 600;
-  display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 3rem; /* Space between folder and text */
+  flex: 1;
+  justify-content: center;
+  padding-bottom: 2rem;
 }
 
-.showcase-btn {
-  padding: 1rem;
-  border-radius: 12px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family: inherit;
-  border: 1px solid transparent;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.showcase-btn.active {
-  background: rgba(167, 139, 250, 0.1);
+.folder-instruction {
+  font-size: 0.85rem;
   color: #A78BFA;
-  border: 1px solid rgba(167, 139, 250, 0.3);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  opacity: 0.8;
+  animation: pulse 2s infinite;
 }
 
-.showcase-btn.active::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%; width: 50%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transition: left 0.5s ease;
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
-.showcase-btn.active:hover::before {
-  left: 200%;
-}
-
-.showcase-btn.active:hover {
-  background: rgba(167, 139, 250, 0.2);
-  border-color: rgba(167, 139, 250, 0.6);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px -5px rgba(167, 139, 250, 0.2);
-}
-
-.showcase-btn.disabled {
-  background: rgba(255, 255, 255, 0.02);
-  color: #64748B;
-  border-color: rgba(255, 255, 255, 0.05);
-  cursor: not-allowed;
-}
-
-/* Responsive */
-@media (max-width: 1280px) {
-  .showcase-section-title {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .showcase-fullscreen-section {
-    min-height: auto;
-    padding: 4rem 1.5rem;
-  }
-  .showcase-content-grid {
+@media (max-width: 900px) {
+  .showcase-folders-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .section-odd .showcase-content-grid {
-    direction: ltr;
-  }
-  .showcase-watermark {
-    font-size: 20vw;
-  }
-}
-
-@media (max-width: 640px) {
-  .showcase-plans-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  .showcase-details-side {
-    padding: 2rem;
-  }
-  .showcase-section-title {
-    font-size: 2rem;
+    gap: 2rem;
+    padding: 2rem 1rem;
   }
 }

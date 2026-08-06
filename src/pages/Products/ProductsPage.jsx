@@ -54,7 +54,7 @@ export default function ProductsPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            Discover professionally designed demo websites created for different industries. Every business category includes four website plans—Basic, Pro, Premium, and Ultra—so you can compare features and choose the perfect solution for your business.
+            Check our work for easy understanding. Every business category includes four website plans—Basic, Pro, Premium, and Ultra. Click on a folder below to explore the live demos.
           </motion.p>
         </header>
 
