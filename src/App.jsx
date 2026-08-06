@@ -48,34 +48,46 @@ const team = [
     mobile: '7702239591'
   },
   {
-    initials: 'PR',
-    name: 'Priya Rajan',
-    role: 'CTO',
-    bio: 'Ex-Amazon Principal Engineer. Architect of three unicorn-scale infrastructure systems.',
-    avatarUrl: '/avatars/pr.png',
-    handle: 'priya_cto',
-    status: 'Scaling',
-    behindGlowColor: 'rgba(236, 72, 153, 0.5)'
+    initials: 'SR',
+    name: 'Sukka Ruchitha',
+    role: 'Marketing & Client Relations',
+    bio: '',
+    avatarUrl: '/avatars/ruchitha.jpeg',
+    idCardImage: '/avatars/ruchitha_id.png',
+    handle: 'ruchitha_s',
+    status: 'Marketing',
+    behindGlowColor: 'rgba(236, 72, 153, 0.5)',
+    email: 'sukkaruchitha3@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/sukka-ruchitha3/',
+    mobile: '9948996686'
   },
   {
-    initials: 'SM',
-    name: 'Sophia Müller',
-    role: 'Chief Product Officer',
-    bio: 'Led product at Stripe and Figma. Passionate about developer experience and design systems.',
-    avatarUrl: '/avatars/sm.png',
-    handle: 'sophia_cpo',
+    initials: 'GS',
+    name: 'gunda sai teja',
+    role: 'QA engineer',
+    bio: '',
+    avatarUrl: '/avatars/saiteja.jpeg',
+    idCardImage: '/avatars/saiteja_id.png',
+    handle: 'sai_teja',
+    status: 'Testing',
+    behindGlowColor: 'rgba(245, 158, 11, 0.5)',
+    email: 'gundasaiteja634@gmail.com',
+    linkedin: 'https://in.linkedin.com/in/sai-teja-gunda-42372b372?utm_source=chatgpt.com',
+    mobile: '9398148549'
+  },
+  {
+    initials: 'PC',
+    name: 'penda chandini',
+    role: 'Frontend/UI-UX',
+    bio: '',
+    avatarUrl: '/avatars/chandini.jpeg',
+    idCardImage: '/avatars/chandini_id.png',
+    handle: 'chandini_p',
     status: 'Designing',
-    behindGlowColor: 'rgba(245, 158, 11, 0.5)'
-  },
-  {
-    initials: 'DN',
-    name: 'Daniel Nwosu',
-    role: 'VP of Engineering',
-    bio: 'Distributed systems expert. Built real-time platforms processing 50M events/day.',
-    avatarUrl: '/avatars/dn.png',
-    handle: 'daniel_vp',
-    status: 'Optimizing',
-    behindGlowColor: 'rgba(59, 130, 246, 0.5)'
+    behindGlowColor: 'rgba(59, 130, 246, 0.5)',
+    email: 'chandinipenda21@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/penda-chandini-13b58227a?',
+    mobile: '8500402096'
   }
 ];
 
