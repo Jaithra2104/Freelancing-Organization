@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="navbar__inner">
         <div className="navbar__logo" onClick={() => scrollTo('hero')}>
           <span className="logo-icon">⬡</span>
-          <span className="logo-text">Nexara<span className="logo-accent">AI</span></span>
+          <span className="logo-text">VYUHA<span className="logo-accent">TECH</span></span>
         </div>
 
         <ul className={`navbar__links ${menuOpen ? 'open' : ''}`}>

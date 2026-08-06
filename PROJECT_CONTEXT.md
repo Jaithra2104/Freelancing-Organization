@@ -1,7 +1,7 @@
-# SoftNexus Solutions: Project Context
+# VYUHA TECH: Project Context
 
-This document tracks the technical requirements, design language, and architecture for the SoftNexus Solutions portfolio. 
-**SoftNexus is a Software Development Agency serving local/small businesses (Restaurants, Medical Shops, etc.). It is NOT a SaaS, AI research, or enterprise cloud company.**
+This document tracks the technical requirements, design language, and architecture for the VYUHA TECH portfolio. 
+**VYUHA TECH is a Software Development Agency serving local/small businesses (Restaurants, Medical Shops, etc.). It is NOT a SaaS, AI research, or enterprise cloud company.**
 **Always refer to this document before building new sections or components.**
 
 ## 🎨 Design Language (Luxury SaaS)

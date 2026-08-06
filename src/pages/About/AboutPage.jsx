@@ -27,7 +27,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          ✨ About SoftNexus
+          ✨ About VYUHA TECH
         </motion.div>
         
         <StrokeText

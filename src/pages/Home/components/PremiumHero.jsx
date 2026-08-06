@@ -73,7 +73,7 @@ export default function PremiumHero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.8 }}
       >
-        SoftNexus Solutions is the premier software agency redefining how enterprises automate, scale, and innovate — from custom web platforms to complex AI integrations.
+        VYUHA TECH is the premier software agency redefining how enterprises automate, scale, and innovate — from custom web platforms to complex AI integrations.
       </motion.p>
       
       <motion.div 

@@ -121,7 +121,7 @@ function App() {
     <>
       <PillNav
         logo="/favicon.svg"
-        logoAlt="NexaraAI"
+        logoAlt="VYUHA TECH"
         items={navItems}
         activeHref={activeSection}
         baseColor="#ffffff"
@@ -358,7 +358,7 @@ function ContactPage() {
               <div className="contact-links">
                 <div className="contact-link-item">
                   <div className="icon">📧</div>
-                  <span>hello@nexaraai.io</span>
+                  <span>hello@vyuhatech.com</span>
                 </div>
                 <div className="contact-link-item">
                   <div className="icon">📍</div>

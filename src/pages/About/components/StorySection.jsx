@@ -14,7 +14,7 @@ export default function StorySection() {
           <span className="hero-badge">✨ Our Story</span>
           <h2 className="text-gradient">Embracing digital transformation without complexity.</h2>
           <p>
-            SoftNexus Solutions was founded with one vision: To help local businesses embrace digital transformation without complexity.
+            VYUHA TECH was founded with one vision: To help local businesses embrace digital transformation without complexity.
           </p>
           <p>
             As a team of passionate developers, designers, and innovators, we recognized that many businesses still struggled with outdated systems, manual workflows, and limited online presence.

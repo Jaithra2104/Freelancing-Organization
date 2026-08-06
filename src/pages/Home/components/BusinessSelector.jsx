@@ -12,7 +12,7 @@ const businesses = [
     id: 'restaurant',
     name: 'Restaurant',
     icon: <FaUtensils />,
-    demoUrl: 'https://demo.softnexus.com/restaurant',
+    demoUrl: 'https://demo.vyuhatech.com/restaurant',
     features: [
       { title: 'Table Booking', desc: 'Real-time reservation system', icon: <FaCalendarAlt /> },
       { title: 'QR Menu', desc: 'Contactless dynamic menus', icon: <FaQrcode /> },
@@ -24,7 +24,7 @@ const businesses = [
     id: 'functionhall',
     name: 'Function Hall',
     icon: <FaBuilding />,
-    demoUrl: 'https://demo.softnexus.com/events',
+    demoUrl: 'https://demo.vyuhatech.com/events',
     features: [
       { title: 'Booking Calendar', desc: 'Availability checking', icon: <FaCalendarAlt /> },
       { title: 'Packages', desc: 'Dynamic pricing tiers', icon: <FaBoxOpen /> },
@@ -36,7 +36,7 @@ const businesses = [
     id: 'medical',
     name: 'Medical Shop',
     icon: <FaPills />,
-    demoUrl: 'https://demo.softnexus.com/medical',
+    demoUrl: 'https://demo.vyuhatech.com/medical',
     features: [
       { title: 'Medicine Catalog', desc: 'Searchable inventory', icon: <FaPills /> },
       { title: 'Inventory Alert', desc: 'Low stock notifications', icon: <FaBoxOpen /> },
@@ -48,7 +48,7 @@ const businesses = [
     id: 'nursery',
     name: 'Nursery',
     icon: <FaSeedling />,
-    demoUrl: 'https://demo.softnexus.com/nursery',
+    demoUrl: 'https://demo.vyuhatech.com/nursery',
     features: [
       { title: 'Plant Catalog', desc: 'Categorized by care level', icon: <FaSeedling /> },
       { title: 'Delivery System', desc: 'Local logistics integration', icon: <FaBoxOpen /> },

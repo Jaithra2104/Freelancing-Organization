@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 
 const timelineEvents = [
-  { year: '2026', title: 'SoftNexus was founded.', desc: 'A vision to simplify digital transformation.' },
+  { year: '2026', title: 'VYUHA TECH was founded.', desc: 'A vision to simplify digital transformation.' },
   { year: 'Phase 1', title: 'Built internal reusable templates.', desc: 'Establishing our robust foundation.' },
   { year: 'Phase 2', title: 'Started serving local businesses.', desc: 'Delivering tailored digital experiences.' },
   { year: 'Phase 3', title: 'Expanded into SaaS platforms.', desc: 'Scaling operations globally.' },
