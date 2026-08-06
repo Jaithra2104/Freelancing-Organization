@@ -46,6 +46,15 @@ const SplitText = ({
       if (animationCompletedRef.current) return;
       const el = ref.current;
 
+      const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      const isMobile = window.innerWidth < 768;
+      if (prefersReducedMotion || isMobile) {
+        gsap.set(el, { ...to, opacity: 1, visibility: 'visible', transform: 'none' });
+        animationCompletedRef.current = true;
+        onCompleteRef.current?.();
+        return;
+      }
+
       if (el._rbsplitInstance) {
         try {
           el._rbsplitInstance.revert();

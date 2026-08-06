@@ -124,7 +124,8 @@ const StrokeText = ({
     };
 
     const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
+    const isMobile = window.innerWidth < 768;
+    if (prefersReducedMotion || isMobile) {
       setEnd();
       return () => gsap.killTweensOf(targets);
     }
