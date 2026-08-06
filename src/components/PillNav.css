@@ -205,17 +205,17 @@
   top: 3.5rem;
   left: 0.5rem;
   right: 0.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  background: rgba(10, 8, 22, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
   z-index: 998;
   opacity: 0;
   transform-origin: top center;
   visibility: hidden;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .mobile-menu-list {
