@@ -276,8 +276,6 @@ function TeamPage() {
                       {m.mobile && (
                         <a href={`tel:${m.mobile}`} className="team-social-link">📞</a>
                       )}
-                      <a href="#" className="team-social-link">𝕏</a>
-                      <a href="#" className="team-social-link">gh</a>
                     </div>
                   </div>
                 </div>
