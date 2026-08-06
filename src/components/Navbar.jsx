@@ -25,7 +25,7 @@ const Navbar = () => {
         </div>
 
         <ul className={`navbar__links ${menuOpen ? 'open' : ''}`}>
-          {['Services', 'Domains', 'Products', 'About', 'Team', 'Contact'].map(item => (
+          {['Services', 'Products', 'About', 'Team', 'Contact'].map(item => (
             <li key={item}>
               <button onClick={() => scrollTo(item.toLowerCase())} className="nav-link">
                 {item}

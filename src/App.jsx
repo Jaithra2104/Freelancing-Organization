@@ -91,7 +91,6 @@ function App() {
   const navItems = [
     { label: 'HOME', href: '/' },
     { label: 'SERVICES', href: '/services' },
-    { label: 'DOMAINS', href: '/domains' },
     { label: 'PRODUCTS', href: '/products' },
     { label: 'PRICING', href: '/pricing' },
     { label: 'ABOUT', href: '/about' },
@@ -116,7 +115,6 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/domains" element={<DomainsPage />} />
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/team" element={<TeamPage />} />
@@ -157,16 +155,7 @@ function PageWrapper({ children, className = '' }) {
 
 // ── SERVICES PAGE is imported from ./pages/Services/ServicesPage ──
 
-// ── DOMAINS PAGE ──
-function DomainsPage() {
-  return (
-    <PageWrapper className="domains-page">
-      <div style={{ padding: '150px 20px', textAlign: 'center', color: '#fff' }}>
-        <h2>Domains Page Coming Soon</h2>
-      </div>
-    </PageWrapper>
-  );
-}
+
 
 // ── PRODUCTS PAGE is imported from ./pages/Products/ProductsPage ──
 
