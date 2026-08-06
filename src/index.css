@@ -1024,6 +1024,11 @@ section { padding: 7rem 2rem; }
   cursor: pointer;
 }
 
+.form-group select option {
+  background: #120F17; /* Dark background to prevent white-on-white in some browsers */
+  color: #ffffff;
+}
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: var(--text-muted);
