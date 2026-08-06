@@ -77,7 +77,7 @@ export const pricingPlans = [
       'Priority Support',
       'Complete Business Automation'
     ],
-    buttonText: 'Contact Us'
+    buttonText: 'Choose Ultra'
   }
 ];
 
