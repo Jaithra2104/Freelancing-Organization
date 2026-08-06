@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export default function CarePlans({ plans }) {
   return (
@@ -35,9 +36,9 @@ export default function CarePlans({ plans }) {
               ))}
             </div>
 
-            <button className="pricing-btn secondary care-btn">
+            <Link to="/contact" className="pricing-btn secondary care-btn" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               Choose Plan
-            </button>
+            </Link>
           </motion.div>
         ))}
       </div>
