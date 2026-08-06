@@ -849,6 +849,12 @@ section { padding: 7rem 2rem; }
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .team-lanyard-container {
+    display: none;
+  }
+}
+
 
 /* ── TECH STRIP ── */
 .tech-strip { background: var(--bg-700); padding: 3.5rem 2rem; }
