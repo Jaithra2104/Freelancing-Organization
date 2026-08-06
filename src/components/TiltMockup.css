@@ -1,0 +1,89 @@
+.tilt-mockup-wrapper {
+  perspective: 1200px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tilt-mockup-container {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.tilt-mockup-container:hover {
+  box-shadow: 0 40px 100px -20px rgba(167, 139, 250, 0.4);
+}
+
+.tilt-mockup-glow {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: -10%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.4) 0%, transparent 60%);
+  filter: blur(80px);
+  z-index: 0;
+  transform: translateZ(-50px);
+}
+
+.tilt-browser-mockup {
+  position: relative;
+  z-index: 1;
+  background: #1A1A1A;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  transform: translateZ(30px); /* Lifts the mockup forward */
+}
+
+.tilt-browser-header {
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  background: #252525;
+  border-bottom: 1px solid #333;
+}
+
+.tilt-browser-viewport {
+  position: relative;
+  width: 100%;
+  height: 550px; /* Big showcase size */
+  overflow: hidden;
+  background: #000;
+}
+
+.tilt-mockup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.tilt-mockup-wrapper:hover .tilt-mockup-img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .tilt-browser-viewport {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tilt-mockup-wrapper {
+    perspective: none; /* Disable 3D on mobile for better touch performance */
+  }
+  .tilt-browser-viewport {
+    height: 280px;
+  }
+}

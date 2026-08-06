@@ -83,151 +83,93 @@
   margin: 0 auto;
 }
 
-/* ── SHOWCASE CARDS CONTAINER ── */
+/* ── SHOWCASE FULL-SCREEN SECTIONS ── */
 .showcase-cards-container {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
 }
 
-/* Staggered Row Layout */
-.showcase-row {
-  width: 100%;
-}
-
-.showcase-spotlight-wrapper {
-  width: 100%;
-  border-radius: 32px !important;
-}
-
-.showcase-card-inner {
-  display: flex;
-  align-items: stretch;
-  gap: 0;
-  min-height: 380px;
-}
-
-/* Row Direction Logic */
-.row-even .showcase-card-inner {
-  flex-direction: row;
-}
-
-.row-odd .showcase-card-inner {
-  flex-direction: row-reverse;
-}
-
-/* Browser Mockup Area */
-.browser-mockup-area {
-  flex: 1.2;
-  background: #1A1A1A;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  flex-direction: column;
+/* Full screen section */
+.showcase-fullscreen-section {
   position: relative;
-  overflow: hidden;
-}
-
-.row-odd .browser-mockup-area {
-  border-right: none;
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.browser-header {
-  padding: 1rem 1.5rem;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  background: #252525;
-  border-bottom: 1px solid #333;
-}
-
-.browser-dots {
-  display: flex;
-  gap: 8px;
-  margin-right: 2rem;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.dot.red { background: #FF5F56; }
-.dot.yellow { background: #FFBD2E; }
-.dot.green { background: #27C93F; }
-
-.browser-address-bar {
-  flex: 1;
-  background: #111;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  color: #888;
-  font-size: 0.9rem;
-  font-family: monospace;
-  text-align: center;
-  letter-spacing: 0.5px;
-}
-
-.browser-viewport {
-  position: relative;
-  width: 100%;
-  flex: 1;
+  justify-content: center;
+  padding: 6rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   overflow: hidden;
-  background: #000;
-  min-height: 280px;
 }
 
-.mockup-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.showcase-row:hover .mockup-img {
-  transform: scale(1.03);
-}
-
-.glass-reflection {
+/* Background watermark title */
+.showcase-watermark {
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    to right, 
-    rgba(255,255,255,0) 0%, 
-    rgba(255,255,255,0.05) 50%, 
-    rgba(255,255,255,0) 100%
-  );
-  transform: skewX(-20deg);
-  transition: 0s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15vw;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.05em;
 }
 
-.showcase-row:hover .glass-reflection {
-  left: 200%;
-  transition: 1.2s ease-in-out;
+.showcase-content-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1400px;
+  width: 100%;
+  align-items: center;
 }
 
-/* Details Area */
-.showcase-details-area {
-  flex: 1;
-  padding: 3rem;
+.section-even .showcase-content-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.section-odd .showcase-content-grid {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl; /* simple way to reverse order visually */
+}
+
+.section-odd .showcase-content-grid > * {
+  direction: ltr; /* fix child text direction */
+}
+
+/* 3D Mockup Container */
+.showcase-mockup-side {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
-.showcase-title {
-  font-size: 2.5rem;
+/* Details Panel */
+.showcase-details-side {
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.showcase-section-title {
+  font-size: 3rem;
   font-weight: 800;
   color: #fff;
   margin-bottom: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.1;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-.showcase-desc {
+.showcase-section-desc {
   font-size: 1.15rem;
   color: #94A3B8;
   line-height: 1.7;
@@ -238,7 +180,7 @@
 .showcase-plans-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .plan-item {
@@ -251,6 +193,9 @@
   font-size: 1rem;
   color: #E2E8F0;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .showcase-btn {
@@ -271,6 +216,20 @@
   color: #A78BFA;
   border: 1px solid rgba(167, 139, 250, 0.3);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-btn.active::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.showcase-btn.active:hover::before {
+  left: 200%;
 }
 
 .showcase-btn.active:hover {
@@ -289,45 +248,37 @@
 
 /* Responsive */
 @media (max-width: 1280px) {
-  .showcase-details-area {
-    padding: 2.5rem;
-  }
-  .showcase-title {
-    font-size: 2rem;
+  .showcase-section-title {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 1024px) {
-  .showcase-card-inner {
-    flex-direction: column !important; /* Stack vertically on tablet/mobile */
+  .showcase-fullscreen-section {
+    min-height: auto;
+    padding: 4rem 1.5rem;
   }
-  
-  .browser-mockup-area {
-    border-right: none !important;
-    border-left: none !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  .showcase-content-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-
-  .browser-viewport {
-    min-height: 320px;
+  .section-odd .showcase-content-grid {
+    direction: ltr;
+  }
+  .showcase-watermark {
+    font-size: 20vw;
   }
 }
 
 @media (max-width: 640px) {
-  .showcase-cards-container {
-    gap: 4rem;
-  }
   .showcase-plans-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  .browser-viewport {
-    min-height: 280px;
-  }
-  .showcase-details-area {
+  .showcase-details-side {
     padding: 2rem;
   }
-  .showcase-title {
-    font-size: 1.75rem;
+  .showcase-section-title {
+    font-size: 2rem;
   }
 }
