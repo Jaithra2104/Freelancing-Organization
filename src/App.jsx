@@ -19,6 +19,11 @@ import {
   SiPostgresql, SiRedis, SiGithub, SiGooglecloud, SiMongodb,
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
+import {
+  FiUser, FiMail, FiPhone, FiBriefcase, FiGlobe, FiCode,
+  FiShoppingCart, FiTrendingUp, FiPenTool, FiCpu, FiMoreHorizontal,
+  FiDollarSign, FiMessageSquare, FiCheckCircle, FiZap, FiShield, FiXCircle
+} from 'react-icons/fi';
 import './index.css';
 
 // Services variable extracted to ServicesPage.jsx
@@ -320,6 +325,25 @@ function TeamPage() {
 
 // ── CONTACT PAGE ──
 function ContactPage() {
+  const [selectedInterests, setSelectedInterests] = useState([]);
+  const [message, setMessage] = useState('');
+
+  const interestsList = [
+    { id: 'web-dev', label: 'Website Development', icon: <FiGlobe /> },
+    { id: 'web-app', label: 'Web Application', icon: <FiCode /> },
+    { id: 'ecommerce', label: 'E-commerce', icon: <FiShoppingCart /> },
+    { id: 'seo', label: 'SEO & Marketing', icon: <FiTrendingUp /> },
+    { id: 'uiux', label: 'UI/UX Design', icon: <FiPenTool /> },
+    { id: 'automation', label: 'Automation', icon: <FiCpu /> },
+    { id: 'other', label: 'Other', icon: <FiMoreHorizontal /> }
+  ];
+
+  const toggleInterest = (id) => {
+    setSelectedInterests(prev => 
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
+
   return (
     <PageWrapper className="contact-page">
       <section className="contact" id="contact">
@@ -350,44 +374,132 @@ function ContactPage() {
               </div>
             </div>
 
-            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="contact-form-advanced" onSubmit={(e) => e.preventDefault()}>
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="fname">First Name</label>
-                  <input id="fname" type="text" placeholder="Arjun" />
+                  <label htmlFor="fname">First Name <span className="req">*</span></label>
+                  <div className="input-with-icon">
+                    <FiUser className="input-icon" />
+                    <input id="fname" type="text" placeholder="Enter your first name" required />
+                  </div>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="lname">Last Name</label>
-                  <input id="lname" type="text" placeholder="Kapoor" />
+                  <label htmlFor="lname">Last Name <span className="req">*</span></label>
+                  <div className="input-with-icon">
+                    <FiUser className="input-icon" />
+                    <input id="lname" type="text" placeholder="Enter your last name" required />
+                  </div>
                 </div>
               </div>
+
               <div className="form-group">
-                <label htmlFor="email">Work Email</label>
-                <input id="email" type="email" placeholder="arjun@company.com" />
+                <label htmlFor="email">Work Email <span className="req">*</span></label>
+                <div className="input-with-icon">
+                  <FiMail className="input-icon" />
+                  <input id="email" type="email" placeholder="example@company.com" required />
+                </div>
+                <div className="form-hint">We'll never share your email with anyone.</div>
               </div>
+
               <div className="form-group">
-                <label htmlFor="company">Company</label>
-                <input id="company" type="text" placeholder="Acme Corp" />
+                <label htmlFor="phone">Phone Number (Optional)</label>
+                <div className="input-with-icon">
+                  <FiPhone className="input-icon" />
+                  <input id="phone" type="tel" placeholder="+91 98765 43210" />
+                </div>
               </div>
+
               <div className="form-group">
-                <label htmlFor="interest">What are you interested in?</label>
-                <select id="interest">
-                  <option value="">Select a service...</option>
-                  <option>AI & Machine Learning</option>
-                  <option>Cloud Infrastructure</option>
-                  <option>NexaBot Platform</option>
-                  <option>SynthOS</option>
-                  <option>PulseEdge</option>
-                  <option>Custom Engagement</option>
-                </select>
+                <label htmlFor="company">Company / Business Name</label>
+                <div className="input-with-icon">
+                  <FiBriefcase className="input-icon" />
+                  <input id="company" type="text" placeholder="Your company or business name" />
+                </div>
               </div>
+
               <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" rows="4" placeholder="Tell us about your project or challenge..." />
+                <label>What are you interested in? <span className="req">*</span></label>
+                <div className="interest-pills-grid">
+                  {interestsList.map(item => {
+                    const isActive = selectedInterests.includes(item.id);
+                    return (
+                      <button 
+                        key={item.id} 
+                        type="button" 
+                        className={`interest-pill ${isActive ? 'active' : ''}`}
+                        onClick={() => toggleInterest(item.id)}
+                      >
+                        {item.icon}
+                        <span>{item.label}</span>
+                        {isActive && <FiCheckCircle className="pill-check-icon" />}
+                      </button>
+                    )
+                  })}
+                </div>
               </div>
-              <button type="submit" className="btn-submit">
+
+              <div className="form-group">
+                <label htmlFor="budget">Project Budget (Optional)</label>
+                <div className="input-with-icon">
+                  <FiDollarSign className="input-icon" />
+                  <select id="budget" className="budget-select">
+                    <option value="">Select your budget range</option>
+                    <option value="under5k">Under $5,000</option>
+                    <option value="5k-10k">$5,000 - $10,000</option>
+                    <option value="10k-25k">$10,000 - $25,000</option>
+                    <option value="25k+">$25,000+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="message">Message / Project Details <span className="req">*</span></label>
+                <div className="input-with-icon align-top">
+                  <FiMessageSquare className="input-icon textarea-icon" />
+                  <textarea 
+                    id="message" 
+                    rows="4" 
+                    placeholder="Tell us about your project, goals, timeline, or any specific requirements..." 
+                    required 
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    maxLength={1000}
+                  />
+                  <span className="char-count">{message.length} / 1000</span>
+                </div>
+              </div>
+
+              <div className="trust-badges">
+                <div className="trust-badge">
+                  <div className="trust-icon-wrap"><FiZap /></div>
+                  <div className="trust-text">
+                    <strong>Quick Response</strong>
+                    <span>Within 24 Hours</span>
+                  </div>
+                </div>
+                <div className="trust-badge">
+                  <div className="trust-icon-wrap"><FiShield /></div>
+                  <div className="trust-text">
+                    <strong>100% Confidential</strong>
+                    <span>Your data is safe</span>
+                  </div>
+                </div>
+                <div className="trust-badge">
+                  <div className="trust-icon-wrap"><FiXCircle /></div>
+                  <div className="trust-text">
+                    <strong>No Spam</strong>
+                    <span>Only relevant replies</span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" className="btn-submit btn-submit-advanced">
                 Send Message →
               </button>
+              
+              <div className="form-footer-disclaimer">
+                By submitting this form, you agree to our <a href="#">Privacy Policy</a>.
+              </div>
             </form>
           </div>
         </div>
