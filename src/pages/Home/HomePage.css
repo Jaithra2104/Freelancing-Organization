@@ -572,4 +572,30 @@
   .premium-divider {
     margin: 2rem 0;
   }
+  
+  /* Business Selector Mobile Fixes */
+  .browser-content {
+    padding: 1.5rem;
+  }
+  .preview-title {
+    font-size: 1.75rem;
+  }
+  .preview-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .browser-preview-wrapper {
+    height: auto;
+    min-height: 500px;
+  }
+  .preview-btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .browser-url-bar {
+    margin: 0 0.5rem;
+    font-size: 0.65rem;
+  }
 }
