@@ -495,7 +495,7 @@ function ContactPage() {
               </button>
 
               <div className="form-footer-disclaimer">
-                By submitting this form, you agree to our <a href="#">Privacy Policy</a>.
+                By submitting this form, you agree to our <Link to="/privacy-policy">Privacy Policy</Link>.
               </div>
             </form>
           </div>

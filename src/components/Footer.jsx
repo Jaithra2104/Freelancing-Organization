@@ -1,31 +1,73 @@
 import { Link } from 'react-router-dom';
-import { FiTwitter, FiLinkedin, FiGithub, FiYoutube } from 'react-icons/fi';
-import '../pages/Legal/Legal.css'; // ensure it gets the styles
+import { FiTwitter, FiLinkedin, FiGithub, FiYoutube, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import './Footer.css';
 
 export default function Footer() {
   return (
     <footer className="global-footer">
-      <div className="global-footer-inner">
-        <div className="global-footer-logo">
-          VYUHA <span>TECH</span>
-        </div>
-        
-        <div className="global-footer-links">
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-and-conditions">Terms & Conditions</Link>
-          <Link to="/refund-policy">Refund & Cancellation Policy</Link>
-          <Link to="/cookie-policy">Cookie Policy</Link>
-        </div>
-
-        <div className="global-footer-bottom">
-          <p>© 2026 VYUHA TECH. All Rights Reserved.</p>
-          <div className="footer-socials" style={{ display: 'flex', gap: '1rem' }}>
-            <a href="#" style={{ color: 'inherit', fontSize: '1.2rem' }}><FiTwitter /></a>
-            <a href="#" style={{ color: 'inherit', fontSize: '1.2rem' }}><FiLinkedin /></a>
-            <a href="#" style={{ color: 'inherit', fontSize: '1.2rem' }}><FiGithub /></a>
-            <a href="#" style={{ color: 'inherit', fontSize: '1.2rem' }}><FiYoutube /></a>
+      <div className="global-footer-grid">
+        {/* Column 1: Brand & Description */}
+        <div className="footer-col brand-col">
+          <div className="global-footer-logo">
+            VYUHA <span>TECH</span>
+          </div>
+          <p className="footer-description">
+            We build high-performance software, modern websites, and custom AI integrations to help businesses scale in the digital era.
+          </p>
+          <div className="footer-socials">
+            <a href="#" aria-label="Twitter"><FiTwitter /></a>
+            <a href="#" aria-label="LinkedIn"><FiLinkedin /></a>
+            <a href="#" aria-label="GitHub"><FiGithub /></a>
+            <a href="#" aria-label="YouTube"><FiYoutube /></a>
           </div>
         </div>
+
+        {/* Column 2: Quick Links */}
+        <div className="footer-col">
+          <h3>Quick Links</h3>
+          <ul className="footer-links">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/products">Demo Websites</Link></li>
+            <li><Link to="/pricing">Pricing</Link></li>
+            <li><Link to="/team">Our Team</Link></li>
+          </ul>
+        </div>
+
+        {/* Column 3: Legal */}
+        <div className="footer-col">
+          <h3>Legal</h3>
+          <ul className="footer-links">
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
+            <li><Link to="/refund-policy">Refund Policy</Link></li>
+            <li><Link to="/cookie-policy">Cookie Policy</Link></li>
+          </ul>
+        </div>
+
+        {/* Column 4: Contact */}
+        <div className="footer-col contact-col">
+          <h3>Contact Us</h3>
+          <ul className="footer-contact-info">
+            <li>
+              <FiMail className="contact-icon"/>
+              <a href="mailto:hello@vyuhatech.com">hello@vyuhatech.com</a>
+            </li>
+            <li>
+              <FiPhone className="contact-icon"/>
+              <a href="tel:+919948996686">+91 99489 96686</a>
+            </li>
+            <li>
+              <FiMapPin className="contact-icon"/>
+              <span>Hyderabad, Telangana, India</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="global-footer-bottom">
+        <p>© {new Date().getFullYear()} VYUHA TECH. All Rights Reserved.</p>
       </div>
     </footer>
   );
