@@ -3,7 +3,7 @@ export const industryDemos = [
     id: 'restaurant',
     title: '🍽️ Restaurant Website',
     description: 'Modern restaurant websites designed to attract more customers with beautiful menus, gallery pages, online enquiries and business information.',
-    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
     plans: {
       basic: null,
       pro: null,
@@ -15,7 +15,7 @@ export const industryDemos = [
     id: 'functionhall',
     title: '🎉 Function Hall Website',
     description: 'Elegant event booking websites with galleries, pricing information, enquiry forms and premium business presentation.',
-    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
     plans: {
       basic: null,
       pro: null,
@@ -27,7 +27,7 @@ export const industryDemos = [
     id: 'medicalshop',
     title: '💊 Medical Shop Website',
     description: 'Professional medical shop websites to display medicines, services, contact information and customer enquiries.',
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5e471d48c?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop',
     plans: {
       basic: 'https://medical-store-basic-plan.vercel.app/',
       pro: null,
@@ -39,7 +39,7 @@ export const industryDemos = [
     id: 'nursery',
     title: '🌱 Nursery Website',
     description: 'Beautiful nursery websites with plant galleries, product showcases and customer enquiry features.',
-    image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=1200&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop',
     plans: {
       basic: null,
       pro: null,
