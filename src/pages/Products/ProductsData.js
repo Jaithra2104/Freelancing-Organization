@@ -22,7 +22,7 @@ export const industryDemos = [
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop',
     plans: {
       basic: 'https://function-hall-basic.vercel.app',
-      pro: null,
+      pro: 'https://function-hall-pro.vercel.app/',
       premium: null,
       ultra: null
     }
@@ -36,7 +36,7 @@ export const industryDemos = [
     plans: {
       basic: 'https://medical-store-basic-plan.vercel.app/',
       pro: 'https://medical-store-pro.vercel.app/',
-      premium: null,
+      premium: 'https://medical-store-premium-plan.vercel.app/',
       ultra: null
     }
   },
@@ -48,7 +48,7 @@ export const industryDemos = [
     image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop',
     plans: {
       basic: 'https://nursery-basic-beta.vercel.app/',
-      pro: null,
+      pro: 'https://nursery-pro.vercel.app/',
       premium: null,
       ultra: null
     }

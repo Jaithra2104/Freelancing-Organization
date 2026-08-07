@@ -24,7 +24,7 @@ const businesses = [
     id: 'functionhall',
     name: 'Function Hall',
     icon: <FaBuilding />,
-    demoUrl: 'https://demo.vyuhatech.com/events',
+    demoUrl: 'https://function-hall-pro.vercel.app/',
     features: [
       { title: 'Booking Calendar', desc: 'Availability checking', icon: <FaCalendarAlt /> },
       { title: 'Packages', desc: 'Dynamic pricing tiers', icon: <FaBoxOpen /> },
@@ -36,7 +36,7 @@ const businesses = [
     id: 'medical',
     name: 'Medical Shop',
     icon: <FaPills />,
-    demoUrl: 'https://demo.vyuhatech.com/medical',
+    demoUrl: 'https://medical-store-premium-plan.vercel.app/',
     features: [
       { title: 'Medicine Catalog', desc: 'Searchable inventory', icon: <FaPills /> },
       { title: 'Inventory Alert', desc: 'Low stock notifications', icon: <FaBoxOpen /> },
@@ -48,7 +48,7 @@ const businesses = [
     id: 'nursery',
     name: 'Nursery',
     icon: <FaSeedling />,
-    demoUrl: 'https://demo.vyuhatech.com/nursery',
+    demoUrl: 'https://nursery-pro.vercel.app/',
     features: [
       { title: 'Plant Catalog', desc: 'Categorized by care level', icon: <FaSeedling /> },
       { title: 'Delivery System', desc: 'Local logistics integration', icon: <FaBoxOpen /> },
@@ -119,9 +119,20 @@ export default function BusinessSelector() {
                 ))}
               </div>
               
-              <Link to="/products" className="preview-btn">
-                View Live Demo →
-              </Link>
+              {activeBusiness.demoUrl && !activeBusiness.demoUrl.includes('demo.vyuhatech.com') ? (
+                <a 
+                  href={activeBusiness.demoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="preview-btn"
+                >
+                  View Live Demo →
+                </a>
+              ) : (
+                <Link to="/products" className="preview-btn">
+                  View Live Demo →
+                </Link>
+              )}
             </motion.div>
           </AnimatePresence>
         </div>
