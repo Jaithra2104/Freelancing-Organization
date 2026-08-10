@@ -120,7 +120,7 @@ function App() {
   return (
     <>
       <PillNav
-        logo="/favicon.svg"
+        logo="/logo.jpeg"
         logoAlt="VYUHA TECH"
         items={navItems}
         activeHref={activeSection}
@@ -290,7 +290,7 @@ function TeamPage() {
                     position={[0, 0, 12]}
                     gravity={[0, -35, 0]}
                     frontImage={m.idCardImage || m.avatarUrl}
-                    backImage="/favicon.svg"
+                    backImage="/logo.jpeg"
                     imageFit="cover"
                     lanyardWidth={0.8}
                   />
