@@ -251,23 +251,63 @@
   100% { top: 150%; }
 }
 
-/* Section Divider */
-.premium-divider {
+/* Section Divider Container */
+.premium-divider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.5), transparent);
-  box-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
-  margin: 4rem 0;
+  margin: 6rem 0;
   position: relative;
+  gap: 2rem;
 }
 
-.premium-divider::after {
-  content: '';
-  position: absolute;
-  top: -10px; left: 50%; transform: translateX(-50%);
-  width: 200px; height: 20px;
-  background: radial-gradient(ellipse at center, rgba(167, 139, 250, 0.2) 0%, transparent 70%);
-  filter: blur(5px);
+.premium-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.35) 100%);
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.15);
+}
+
+/* The right line needs to fade out the opposite way */
+.premium-divider-container .premium-divider-line:last-child {
+  background: linear-gradient(90deg, rgba(167, 139, 250, 0.35) 0%, transparent 100%);
+}
+
+.premium-divider-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(18, 15, 23, 0.75);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(167, 139, 250, 0.1);
+  z-index: 2;
+}
+
+.divider-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.divider-brand-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: #f8fafc;
+  text-transform: uppercase;
+}
+
+.divider-brand-text .highlight {
+  color: #a78bfa;
 }
 
 /* Lower Hero Additions */
@@ -569,8 +609,9 @@
   .hero__title {
     font-size: clamp(2rem, 10vw, 3rem);
   }
-  .premium-divider {
-    margin: 2rem 0;
+  .premium-divider-container {
+    margin: 3rem 0;
+    gap: 1rem;
   }
   
   /* Business Selector Mobile Fixes */
