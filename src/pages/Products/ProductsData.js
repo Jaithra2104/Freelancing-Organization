@@ -49,7 +49,7 @@ export const industryDemos = [
     plans: {
       basic: 'https://nursery-basic-beta.vercel.app/',
       pro: 'https://nursery-pro.vercel.app/',
-      premium: null,
+      premium: 'https://nursery-premium.vercel.app/',
       ultra: null
     }
   }
