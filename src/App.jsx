@@ -322,8 +322,16 @@ function TeamPage() {
 
 // ── CONTACT PAGE ──
 function ContactPage() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [company, setCompany] = useState('');
   const [selectedInterests, setSelectedInterests] = useState([]);
+  const [budget, setBudget] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | 'validation-error' | null
 
   const interestsList = [
     { id: 'web-dev', label: 'Website Development', icon: <FiGlobe /> },
@@ -339,6 +347,62 @@ function ContactPage() {
     setSelectedInterests(prev =>
       prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
     );
+  };
+
+  const serviceValue = selectedInterests
+    .map(id => interestsList.find(item => item.id === id)?.label)
+    .filter(Boolean)
+    .join(', ');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (selectedInterests.length === 0) {
+      setSubmitStatus('validation-error');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mgawarla', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phone,
+          company,
+          service: serviceValue,
+          budget,
+          message
+        })
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        // Clear all fields
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setPhone('');
+        setCompany('');
+        setSelectedInterests([]);
+        setBudget('');
+        setMessage('');
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (err) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -371,20 +435,36 @@ function ContactPage() {
               </div>
             </div>
 
-            <form className="contact-form-advanced" onSubmit={(e) => e.preventDefault()}>
+            <form className="contact-form-advanced" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="fname">First Name <span className="req">*</span></label>
                   <div className="input-with-icon">
                     <FiUser className="input-icon" />
-                    <input id="fname" type="text" placeholder="Enter your first name" required />
+                    <input 
+                      id="fname" 
+                      name="firstName" 
+                      type="text" 
+                      placeholder="Enter your first name" 
+                      value={firstName} 
+                      onChange={(e) => setFirstName(e.target.value)} 
+                      required 
+                    />
                   </div>
                 </div>
                 <div className="form-group">
                   <label htmlFor="lname">Last Name <span className="req">*</span></label>
                   <div className="input-with-icon">
                     <FiUser className="input-icon" />
-                    <input id="lname" type="text" placeholder="Enter your last name" required />
+                    <input 
+                      id="lname" 
+                      name="lastName" 
+                      type="text" 
+                      placeholder="Enter your last name" 
+                      value={lastName} 
+                      onChange={(e) => setLastName(e.target.value)} 
+                      required 
+                    />
                   </div>
                 </div>
               </div>
@@ -393,7 +473,15 @@ function ContactPage() {
                 <label htmlFor="email">Work Email <span className="req">*</span></label>
                 <div className="input-with-icon">
                   <FiMail className="input-icon" />
-                  <input id="email" type="email" placeholder="example@company.com" required />
+                  <input 
+                    id="email" 
+                    name="email" 
+                    type="email" 
+                    placeholder="example@company.com" 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    required 
+                  />
                 </div>
                 <div className="form-hint">We'll never share your email with anyone.</div>
               </div>
@@ -402,7 +490,14 @@ function ContactPage() {
                 <label htmlFor="phone">Phone Number (Optional)</label>
                 <div className="input-with-icon">
                   <FiPhone className="input-icon" />
-                  <input id="phone" type="tel" placeholder="+91 98765 43210" />
+                  <input 
+                    id="phone" 
+                    name="phone" 
+                    type="tel" 
+                    placeholder="+91 98765 43210" 
+                    value={phone} 
+                    onChange={(e) => setPhone(e.target.value)} 
+                  />
                 </div>
               </div>
 
@@ -410,7 +505,14 @@ function ContactPage() {
                 <label htmlFor="company">Company / Business Name</label>
                 <div className="input-with-icon">
                   <FiBriefcase className="input-icon" />
-                  <input id="company" type="text" placeholder="Your company or business name" />
+                  <input 
+                    id="company" 
+                    name="company" 
+                    type="text" 
+                    placeholder="Your company or business name" 
+                    value={company} 
+                    onChange={(e) => setCompany(e.target.value)} 
+                  />
                 </div>
               </div>
 
@@ -433,13 +535,20 @@ function ContactPage() {
                     )
                   })}
                 </div>
+                <input type="hidden" name="service" value={serviceValue} />
               </div>
 
               <div className="form-group">
                 <label htmlFor="budget">Project Budget (Optional)</label>
                 <div className="input-with-icon">
                   <FaRupeeSign className="input-icon" />
-                  <select id="budget" className="budget-select">
+                  <select 
+                    id="budget" 
+                    name="budget" 
+                    className="budget-select" 
+                    value={budget} 
+                    onChange={(e) => setBudget(e.target.value)}
+                  >
                     <option value="">Select your budget range</option>
                     <option value="under10k">Under ₹10,000</option>
                     <option value="10k-25k">₹10,000 - ₹25,000</option>
@@ -455,6 +564,7 @@ function ContactPage() {
                   <FiMessageSquare className="input-icon textarea-icon" />
                   <textarea
                     id="message"
+                    name="message"
                     rows="4"
                     placeholder="Tell us about your project, goals, timeline, or any specific requirements..."
                     required
@@ -490,8 +600,28 @@ function ContactPage() {
                 </div>
               </div>
 
-              <button type="submit" className="btn-submit btn-submit-advanced">
-                Send Message →
+              {submitStatus === 'success' && (
+                <div className="form-status-message success-message">
+                  Thank you! Your enquiry has been received. Our team will get back to you shortly.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="form-status-message error-message">
+                  Something went wrong. Please try again or contact us directly.
+                </div>
+              )}
+              {submitStatus === 'validation-error' && (
+                <div className="form-status-message error-message">
+                  Please select at least one service of interest.
+                </div>
+              )}
+
+              <button 
+                type="submit" 
+                className="btn-submit btn-submit-advanced" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message →'}
               </button>
 
               <div className="form-footer-disclaimer">

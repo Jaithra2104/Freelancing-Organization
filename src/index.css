@@ -1390,3 +1390,39 @@ section { padding: 7rem 2rem; }
     direction: ltr;
   }
 }
+
+/* Form Status Messages */
+.form-status-message {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+  animation: fadeInStatus 0.3s ease-out forwards;
+}
+
+.form-status-message.success-message {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399; /* emerald-400 */
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.05);
+}
+
+.form-status-message.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171; /* red-400 */
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.05);
+}
+
+@keyframes fadeInStatus {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
