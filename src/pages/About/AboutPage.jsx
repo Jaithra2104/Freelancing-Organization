@@ -94,7 +94,7 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Link to="/contact" className="btn-primary">Start Your Project</Link>
-            <Link to="/portfolio" className="btn-secondary">View Our Portfolio</Link>
+            <Link to="/products" className="btn-secondary">View Our Work</Link>
           </motion.div>
         </div>
       </section>

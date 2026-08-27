@@ -2,15 +2,15 @@ import { motion } from 'motion/react';
 import { FaCheckCircle } from 'react-icons/fa';
 
 const projects = [
-  { title: 'Restaurant Website', status: 'Completed', x: '12%', y: '30%', delay: 0 },
-  { title: 'Function Hall', status: 'Premium Package', x: '75%', y: '25%', delay: 2 },
-  { title: 'Medical Shop', status: 'Live', x: '8%', y: '70%', delay: 1 },
-  { title: 'Nursery', status: 'Deploying', x: '82%', y: '65%', delay: 3 },
+  { title: 'Restaurant Website', status: 'COMPLETED', x: '12%', y: '30%', delay: 0 },
+  { title: 'Function Hall Website', status: 'PREMIUM DEMO', x: '75%', y: '25%', delay: 2 },
+  { title: 'Medical Shop Website', status: 'LIVE', x: '8%', y: '70%', delay: 1 },
+  { title: 'Nursery Website', status: 'IN DEVELOPMENT', x: '82%', y: '65%', delay: 3 },
 ];
 
 export default function FloatingProjectCards() {
   return (
-    <div className="floating-elements-container" style={{ zIndex: 3 }}>
+    <div className="floating-elements-container floating-project-cards-container" style={{ zIndex: 3 }}>
       {projects.map((proj, i) => (
         <motion.div
           key={i}

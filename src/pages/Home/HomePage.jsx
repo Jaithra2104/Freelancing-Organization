@@ -25,7 +25,7 @@ export default function HomePage() {
       <CursorSpotlight />
 
       {/* ── HERO SECTION ── */}
-      <section className="hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <section className="hero">
         
         {/* Background Layer 0: Plasma */}
         <div className="hero__plasma-bg" style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
@@ -55,24 +55,12 @@ export default function HomePage() {
 
         <div className="hero__overlay" style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to bottom, transparent, #0B0C10)' }} />
 
-        {/* Floating Layer 2: Icons & Project Cards */}
-        <FloatingIcons />
-        <FloatingProjectCards />
-
         {/* Content Layer 3: Premium Hero Text & Buttons */}
         <PremiumHero />
 
-        <motion.div 
-          className="scroll-indicator"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-        >
-          <span>Scroll to Explore</span>
-          <div className="scroll-line">
-            <div className="scroll-line-fill"></div>
-          </div>
-        </motion.div>
+        {/* Floating Layer 2: Icons & Project Cards */}
+        <FloatingIcons />
+        <FloatingProjectCards />
       </section>
 
       {/* ── LOWER HERO ADDITIONS ── */}
