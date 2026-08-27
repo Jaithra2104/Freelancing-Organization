@@ -36,14 +36,19 @@ export default function PricingCards({ plans }) {
             
             <div className="pricing-price-wrap">
               {hasDiscount ? (
-                <>
+                <div className="discount-price-container">
                   <span className="pricing-price-original">₹{originalPrice}</span>
-                  <span className="pricing-price discounted">₹{discountedPrice}</span>
-                </>
+                  <div className="pricing-price-main-row">
+                    <span className="pricing-price discounted">₹{discountedPrice}</span>
+                    <span className="pricing-unit">{plan.unit}</span>
+                  </div>
+                </div>
               ) : (
-                <span className="pricing-price">{plan.price}</span>
+                <div className="normal-price-container">
+                  <span className="pricing-price">{plan.price}</span>
+                  <span className="pricing-unit">{plan.unit}</span>
+                </div>
               )}
-              <span className="pricing-unit">{plan.unit}</span>
             </div>
           
           <p className="pricing-desc">{plan.desc}</p>
