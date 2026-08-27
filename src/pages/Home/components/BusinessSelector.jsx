@@ -12,7 +12,7 @@ const businesses = [
     id: 'restaurant',
     name: 'Restaurant',
     icon: <FaUtensils />,
-    demoUrl: 'https://demo.vyuhatech.com/restaurant',
+    demoUrl: 'https://restaurant-premium-six.vercel.app/',
     features: [
       { title: 'Table Booking', desc: 'Real-time reservation system', icon: <FaCalendarAlt /> },
       { title: 'QR Menu', desc: 'Contactless dynamic menus', icon: <FaQrcode /> },

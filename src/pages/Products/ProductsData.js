@@ -8,9 +8,9 @@ export const industryDemos = [
     description: 'Modern restaurant websites designed to attract more customers with beautiful menus, gallery pages, online enquiries and business information.',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop',
     plans: {
-      basic: null,
-      pro: null,
-      premium: null,
+      basic: 'https://project-bolt-sb1-sprzgxvd.vercel.app/',
+      pro: 'https://restaurant-pro-version.vercel.app/',
+      premium: 'https://restaurant-premium-six.vercel.app/',
       ultra: null
     }
   },
