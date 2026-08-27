@@ -422,11 +422,15 @@ function ContactPage() {
               <div className="contact-links">
                 <div className="contact-link-item">
                   <div className="icon">📧</div>
-                  <span>hello@vyuhatech.com</span>
+                  <span>vyuhatech2026@gmail.com</span>
+                </div>
+                <div className="contact-link-item">
+                  <div className="icon">📞</div>
+                  <span>+91 77022 39591</span>
                 </div>
                 <div className="contact-link-item">
                   <div className="icon">📍</div>
-                  <span>San Francisco, CA · London · Bangalore</span>
+                  <span>Hyderabad, India (Remote Workspace)</span>
                 </div>
                 <div className="contact-link-item">
                   <div className="icon">🗓️</div>

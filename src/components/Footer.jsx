@@ -52,15 +52,15 @@ export default function Footer() {
           <ul className="footer-contact-info">
             <li>
               <FiMail className="contact-icon"/>
-              <a href="mailto:hello@vyuhatech.com">hello@vyuhatech.com</a>
+              <a href="mailto:vyuhatech2026@gmail.com">vyuhatech2026@gmail.com</a>
             </li>
             <li>
               <FiPhone className="contact-icon"/>
-              <a href="tel:+919948996686">+91 99489 96686</a>
+              <a href="tel:+917702239591">+91 77022 39591</a>
             </li>
             <li>
               <FiMapPin className="contact-icon"/>
-              <span>Hyderabad, Telangana, India</span>
+              <span>Hyderabad, India (Remote Workspace)</span>
             </li>
           </ul>
         </div>

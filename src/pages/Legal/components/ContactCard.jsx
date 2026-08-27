@@ -18,7 +18,7 @@ export default function ContactCard() {
           <Link to="/contact" className="btn-legal-primary">
             <FiMessageCircle /> Contact Us
           </Link>
-          <a href="mailto:hello@vyuhatech.com" className="btn-legal-secondary">
+          <a href="mailto:vyuhatech2026@gmail.com" className="btn-legal-secondary">
             <FiMail /> Email Us
           </a>
         </div>
