@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
-import Plasma from '../../components/Plasma';
+import Lightfall from '../../components/Lightfall';
 
 import './HomePage.css';
 import CursorSpotlight from './components/CursorSpotlight';
@@ -27,19 +27,27 @@ export default function HomePage() {
       {/* ── HERO SECTION ── */}
       <section className="hero">
         
-        {/* Background Layer 0: Plasma */}
+        {/* Background Layer 0: Lightfall */}
         <div className="hero__plasma-bg" style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <Plasma
-            color="#B497CF"
-            speed={1}
-            direction="forward"
-            scale={1}
+          <Lightfall
+            colors={['#A6C8FF', '#5227FF', '#FF9FFC']}
+            backgroundColor="#0A29FF"
+            speed={0.5}
+            streakCount={2}
+            streakWidth={1}
+            streakLength={1}
+            glow={1}
+            density={0.6}
+            twinkle={1}
+            zoom={3}
+            backgroundGlow={0.5}
             opacity={1}
-            mouseInteractive={true}
-            renderScale={0.55}
-            maxDpr={1.5}
-            targetFps={60}
-            iterations={60}
+            mouseInteraction
+            mouseStrength={0.5}
+            mouseRadius={1}
+            color1="#A6C8FF"
+            color2="#5227FF"
+            color3="#FF9FFC"
           />
         </div>
 

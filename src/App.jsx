@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, Link } from 'react-router-dom';
-import Plasma from './components/Plasma';
 import CountUp from './components/CountUp';
 import ScrollReveal from './components/ScrollReveal';
 import SplitText from './components/SplitText';
