@@ -4,6 +4,8 @@ import StrokeText from '../../components/StrokeText';
 
 import { pricingPlans, includedFeatures, carePlans, deliverablesList, pricingFAQs } from './PricingData';
 import PricingCards from './components/PricingCards';
+import LaunchOfferBanner from './components/LaunchOfferBanner';
+import ReferAndEarn from './components/ReferAndEarn';
 import IncludedFeatures from './components/IncludedFeatures';
 import CarePlans from './components/CarePlans';
 import DeliverablesList from './components/DeliverablesList';
@@ -66,7 +68,9 @@ export default function PricingPage() {
         </header>
 
         {/* Components */}
+        <LaunchOfferBanner />
         <PricingCards plans={pricingPlans} />
+        <ReferAndEarn />
         <IncludedFeatures features={includedFeatures} />
         <CarePlans plans={carePlans} />
         <DeliverablesList list={deliverablesList} />

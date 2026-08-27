@@ -1,3 +1,16 @@
+export const launchConfig = {
+  enabled: true,
+  discountPercent: 20,
+  maxClients: 10,
+  spotsAvailable: 10
+};
+
+export const referralConfig = {
+  enabled: true,
+  rewardPercent: 10,
+  maxCreditPercent: 30
+};
+
 export const pricingPlans = [
   {
     icon: '🌱',
