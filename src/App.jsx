@@ -111,10 +111,18 @@ function App() {
   const location = useLocation();
   const activeSection = location.pathname;
 
-  // Sync scroll to top on route change for smooth user transition
+  // Sync scroll to top on route change & track SPA page views in GA4
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [location.pathname]);
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: location.pathname + location.search,
+      });
+    }
+  }, [location.pathname, location.search]);
+
 
   return (
     <>
