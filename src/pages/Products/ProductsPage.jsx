@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
+import SEO from '../../components/SEO';
 import StrokeText from '../../components/StrokeText';
 
 import { industryDemos } from './ProductsData';
@@ -13,8 +14,33 @@ export default function ProductsPage() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
+  const productsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': 'https://www.vyuhatech.site/'
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'Demo Showcase',
+        'item': 'https://www.vyuhatech.site/products'
+      }
+    ]
+  };
+
   return (
     <div className="products-page-container">
+      <SEO
+        title="Our Projects & Demo Showcase | VyuhaTech"
+        description="Explore VyuhaTech's live demo showcase and custom website solutions across business industries, featuring Basic, Pro, Premium, and Ultra website plans."
+        canonicalPath="/products"
+        schema={productsSchema}
+      />
       {/* Background Enhancements */}
       <div className="products-bg-glow"></div>
       <div className="products-bg-grid"></div>
@@ -31,6 +57,8 @@ export default function ProductsPage() {
             ✨ Live Demo Showcase
           </motion.div>
           
+          <h1 className="visually-hidden">Our Projects &amp; Live Website Demos</h1>
+
           <StrokeText
             text="Explore Website Solutions Built for Your Business"
             strokeColor="#A78BFA"
@@ -47,6 +75,7 @@ export default function ProductsPage() {
             letterSpacing={-2}
             className="products-stroke-heading"
           />
+
           
           <motion.p 
             className="products-desc-main"

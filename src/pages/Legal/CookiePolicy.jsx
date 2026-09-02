@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import SEO from '../../components/SEO';
 import LegalHero from './components/LegalHero';
 import SummaryCard from './components/SummaryCard';
 import PolicyAccordion from './components/PolicyAccordion';
@@ -23,7 +24,13 @@ export default function CookiePolicy() {
 
   return (
     <div className="legal-page-container">
+      <SEO
+        title="Cookie Policy | VyuhaTech"
+        description="VyuhaTech Cookie Policy. Details on essential, performance, and preference cookies used to improve user experience."
+        canonicalPath="/cookie-policy"
+      />
       <div className="legal-bg-glow"></div>
+
       <div className="legal-bg-grid"></div>
 
       <div className="legal-content-wrapper">

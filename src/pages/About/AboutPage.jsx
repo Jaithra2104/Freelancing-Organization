@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import SEO from '../../components/SEO';
 
 import './AboutPage.css';
 import StrokeText from '../../components/StrokeText';
@@ -17,8 +18,33 @@ export default function AboutPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': 'https://www.vyuhatech.site/'
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'About Us',
+        'item': 'https://www.vyuhatech.site/about'
+      }
+    ]
+  };
+
   return (
     <div className="about-page-container">
+      <SEO
+        title="About VyuhaTech | Our Team & Technology"
+        description="Learn about VyuhaTech, our mission, core values, technology stack, and how our team builds high-performance digital products for growing businesses."
+        canonicalPath="/about"
+        schema={aboutSchema}
+      />
       {/* 1. Hero Section */}
       <section className="section-container about-hero">
         <motion.div 
@@ -30,6 +56,8 @@ export default function AboutPage() {
           ✨ About VYUHA TECH
         </motion.div>
         
+        <h1 className="visually-hidden">About VyuhaTech — Our Team &amp; Technology</h1>
+
         <StrokeText
           text="About Us"
           strokeColor="#A78BFA"
@@ -46,6 +74,7 @@ export default function AboutPage() {
           letterSpacing={-4}
           className="about-stroke-heading"
         />
+
 
         <motion.p 
           className="about-hero-sub"

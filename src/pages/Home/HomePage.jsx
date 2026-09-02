@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
+import SEO from '../../components/SEO';
 import Lightfall from '../../components/Lightfall';
 
 import './HomePage.css';
@@ -19,10 +20,41 @@ export default function HomePage() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
+  const homeSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      'name': 'VyuhaTech',
+      'url': 'https://www.vyuhatech.site',
+      'logo': 'https://www.vyuhatech.site/logo.jpeg',
+      'email': 'hello@vyuhatech.site',
+      'description': 'VyuhaTech builds modern websites, web applications, and custom software solutions that turn ideas into reliable digital products.',
+      'slogan': 'FROM VISION TO REALITY'
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      'name': 'VyuhaTech',
+      'url': 'https://www.vyuhatech.site',
+      'image': 'https://www.vyuhatech.site/og-image.png',
+      'priceRange': '₹₹',
+      'email': 'hello@vyuhatech.site',
+      'description': 'Custom web development, business websites, e-commerce solutions, UI/UX design, and custom software development services.',
+      'areaServed': 'Worldwide'
+    }
+  ];
+
   return (
     <div className="home-page-container">
+      <SEO
+        title="VyuhaTech | Web Development & Software Solutions"
+        description="VyuhaTech builds modern websites, web applications, and custom software solutions that turn ideas into reliable digital products."
+        canonicalPath="/"
+        schema={homeSchema}
+      />
       {/* ── CURSOR SPOTLIGHT ── */}
       <CursorSpotlight />
+
 
       {/* ── HERO SECTION ── */}
       <section className="hero">

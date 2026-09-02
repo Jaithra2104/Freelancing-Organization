@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation, Link } from 'react-router-dom';
+import SEO from './components/SEO';
 import CountUp from './components/CountUp';
 import ScrollReveal from './components/ScrollReveal';
 import SplitText from './components/SplitText';
@@ -12,6 +13,7 @@ import HomePage from './pages/Home/HomePage';
 import ServicesPage from './pages/Services/ServicesPage';
 import PricingPage from './pages/Pricing/PricingPage';
 import ProductsPage from './pages/Products/ProductsPage';
+import NotFoundPage from './pages/NotFound/NotFoundPage';
 import PrivacyPolicy from './pages/Legal/PrivacyPolicy';
 import TermsAndConditions from './pages/Legal/TermsAndConditions';
 import RefundPolicy from './pages/Legal/RefundPolicy';
@@ -114,8 +116,6 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 
-
-
   return (
     <>
       <PillNav
@@ -141,10 +141,11 @@ function App() {
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
       {/* ── FOOTER ── */}
-      {location.pathname !== '/' && <Footer />}
+      <Footer />
     </>
   );
 }
@@ -162,8 +163,6 @@ function PageWrapper({ children, className = '' }) {
 
 // ── SERVICES PAGE is imported from ./pages/Services/ServicesPage ──
 
-
-
 // ── PRODUCTS PAGE is imported from ./pages/Products/ProductsPage ──
 
 // ── ABOUT PAGE is imported from ./pages/About/AboutPage ──
@@ -179,15 +178,40 @@ function TeamPage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  const teamSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': 'https://www.vyuhatech.site/'
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'Team',
+        'item': 'https://www.vyuhatech.site/team'
+      }
+    ]
+  };
+
   return (
     <PageWrapper className="team-page">
+      <SEO
+        title="Our Team | VyuhaTech Software & Web Engineers"
+        description="Meet the VyuhaTech team. Experienced developers, UI/UX designers, and technology managers building custom web and software solutions."
+        canonicalPath="/team"
+        schema={teamSchema}
+      />
       <section className="team" id="team">
         <div className="section-inner">
           <span className="section-label">The Team</span>
           <div className="team-heading-wrap">
             <SplitText
               text="Built by World-Class Engineers"
-              tag="h2"
+              tag="h1"
               className="section-title team-split-heading"
               delay={30}
               duration={0.9}
@@ -203,7 +227,7 @@ function TeamPage() {
 
           <div className="team-desc-wrap">
             <SplitText
-              text="Our team brings together talent from Google, Amazon, Stripe, and top research labs around the world."
+              text="Our team brings together talent specializing in web development, backend engineering, QA testing, and UI/UX design."
               tag="p"
               className="section-desc team-split-desc"
               delay={18}
@@ -404,24 +428,44 @@ function ContactPage() {
     }
   };
 
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    'name': 'Contact VyuhaTech',
+    'url': 'https://www.vyuhatech.site/contact',
+    'description': 'Contact VyuhaTech for web development, web applications, custom software solutions, and AI automation inquiries.',
+    'mainEntity': {
+      '@type': 'Organization',
+      'name': 'VyuhaTech',
+      'email': 'hello@vyuhatech.site',
+      'url': 'https://www.vyuhatech.site'
+    }
+  };
+
   return (
     <PageWrapper className="contact-page">
+      <SEO
+        title="Contact VyuhaTech | Web & Software Solutions"
+        description="Contact VyuhaTech for custom web development, web applications, e-commerce websites, and business software solutions. Request a free consultation."
+        canonicalPath="/contact"
+        schema={contactSchema}
+      />
       <section className="contact" id="contact">
         <div className="section-inner">
           <div className="contact-wrapper">
             <div className="contact-info">
               <span className="section-label">Get In Touch</span>
-              <h2>
+              <h1>
                 Ready to build<br />something <span>extraordinary?</span>
-              </h2>
+              </h1>
               <p>
-                Whether you&apos;re a startup exploring AI or an enterprise ready to scale,
+                Whether you&apos;re a growing business looking for a modern website or a startup ready to build custom web software,
                 our team is ready to help you move fast and build right.
               </p>
               <div className="contact-links">
                 <div className="contact-link-item">
                   <div className="icon">📧</div>
-                  <span>vyuhatech2026@gmail.com</span>
+                  <a href="mailto:hello@vyuhatech.site" style={{ color: 'inherit', textDecoration: 'none' }}>hello@vyuhatech.site</a>
                 </div>
                 <div className="contact-link-item">
                   <div className="icon">📞</div>
@@ -433,10 +477,11 @@ function ContactPage() {
                 </div>
                 <div className="contact-link-item">
                   <div className="icon">🗓️</div>
-                  <span>Book a demo — 30-minute call, no pressure</span>
+                  <span>Book a consultation — 30-minute call, no pressure</span>
                 </div>
               </div>
             </div>
+
 
             <form className="contact-form-advanced" onSubmit={handleSubmit}>
               <div className="form-row">

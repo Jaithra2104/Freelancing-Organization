@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
+import SEO from '../../components/SEO';
 import StrokeText from '../../components/StrokeText';
 
 import './ServicesPage.css';
@@ -50,8 +51,34 @@ export default function ServicesPage() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
+  const servicesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'name': 'VyuhaTech Services',
+    'itemListElement': services.map((s, index) => ({
+      '@type': 'ListItem',
+      'position': index + 1,
+      'item': {
+        '@type': 'Service',
+        'name': s.title,
+        'description': s.desc,
+        'provider': {
+          '@type': 'Organization',
+          'name': 'VyuhaTech',
+          'url': 'https://www.vyuhatech.site'
+        }
+      }
+    }))
+  };
+
   return (
     <div className="services-page-container">
+      <SEO
+        title="Web Development & Software Solutions | VyuhaTech"
+        description="Explore VyuhaTech's web development, custom software solutions, admin dashboards, AI business automation, and UI/UX design services."
+        canonicalPath="/services"
+        schema={servicesSchema}
+      />
       {/* Background Enhancements */}
       <div className="services-bg-glow"></div>
       <div className="services-bg-grid"></div>
@@ -67,6 +94,8 @@ export default function ServicesPage() {
           >
             ✨ Our Services
           </motion.div>
+          
+          <h1 className="visually-hidden">Web Development &amp; Software Solutions</h1>
           
           <StrokeText
             text="Digital Solutions Built for Growing Businesses"
@@ -84,6 +113,7 @@ export default function ServicesPage() {
             letterSpacing={-2}
             className="services-stroke-heading"
           />
+
           
           <motion.p 
             className="services-desc"

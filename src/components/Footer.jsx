@@ -32,7 +32,9 @@ export default function Footer() {
             <li><Link to="/products">Demo Websites</Link></li>
             <li><Link to="/pricing">Pricing</Link></li>
             <li><Link to="/team">Our Team</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
           </ul>
+
         </div>
 
         {/* Column 3: Legal */}
@@ -52,8 +54,9 @@ export default function Footer() {
           <ul className="footer-contact-info">
             <li>
               <FiMail className="contact-icon"/>
-              <a href="mailto:vyuhatech2026@gmail.com">vyuhatech2026@gmail.com</a>
+              <a href="mailto:hello@vyuhatech.site">hello@vyuhatech.site</a>
             </li>
+
             <li>
               <FiPhone className="contact-icon"/>
               <a href="tel:+917702239591">+91 77022 39591</a>

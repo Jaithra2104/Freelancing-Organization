@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import SEO from '../../components/SEO';
 import LegalHero from './components/LegalHero';
 import SummaryCard from './components/SummaryCard';
 import PolicyAccordion from './components/PolicyAccordion';
@@ -23,7 +24,13 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="legal-page-container">
+      <SEO
+        title="Privacy Policy | VyuhaTech"
+        description="VyuhaTech Privacy Policy. Learn how we collect, protect, and handle your data when using our website and services."
+        canonicalPath="/privacy-policy"
+      />
       <div className="legal-bg-glow"></div>
+
       <div className="legal-bg-grid"></div>
 
       <div className="legal-content-wrapper">

@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
+import SEO from '../../components/SEO';
 import LegalHero from './components/LegalHero';
 import SummaryCard from './components/SummaryCard';
 import PolicyAccordion from './components/PolicyAccordion';
 import ContactCard from './components/ContactCard';
 import CTASection from './components/CTASection';
-import { FiSearch, FiDollarSign, FiEdit3, FiAward, FiHeadphones, FiUsers } from 'react-icons/fi';
+import { FiCheckCircle, FiFileText, FiShield, FiDollarSign, FiZap, FiHelpCircle } from 'react-icons/fi';
 import './Legal.css';
 
 export default function TermsAndConditions() {
@@ -13,16 +14,21 @@ export default function TermsAndConditions() {
   }, []);
 
   const summaryItems = [
-    { title: 'Transparent Process', icon: <FiSearch /> },
-    { title: 'Clear Pricing', icon: <FiDollarSign /> },
-    { title: 'Fair Revisions', icon: <FiEdit3 /> },
-    { title: 'Client Ownership', icon: <FiAward /> },
-    { title: 'Professional Support', icon: <FiHeadphones /> },
-    { title: 'Mutual Responsibilities', icon: <FiUsers /> }
+    { title: 'Clear Scope', icon: <FiCheckCircle /> },
+    { title: 'Fair Agreements', icon: <FiFileText /> },
+    { title: 'Intellectual Property Protection', icon: <FiShield /> },
+    { title: 'Transparent Payment Terms', icon: <FiDollarSign /> },
+    { title: 'Timely Execution', icon: <FiZap /> },
+    { title: 'Support & Assistance', icon: <FiHelpCircle /> }
   ];
 
   return (
     <div className="legal-page-container">
+      <SEO
+        title="Terms and Conditions | VyuhaTech"
+        description="VyuhaTech Terms and Conditions outlining project scope, intellectual property, transparent payment terms, and service agreements."
+        canonicalPath="/terms-and-conditions"
+      />
       <div className="legal-bg-glow"></div>
       <div className="legal-bg-grid"></div>
 

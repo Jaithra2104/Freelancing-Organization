@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
+import SEO from '../../components/SEO';
 import StrokeText from '../../components/StrokeText';
 
 import { pricingPlans, includedFeatures, carePlans, deliverablesList, pricingFAQs } from './PricingData';
@@ -20,8 +21,27 @@ export default function PricingPage() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
+  const pricingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': pricingFAQs.map(faq => ({
+      '@type': 'Question',
+      'name': faq.q,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': faq.a
+      }
+    }))
+  };
+
   return (
     <div className="pricing-page-container">
+      <SEO
+        title="Transparent Web & Software Development Pricing | VyuhaTech"
+        description="Simple and transparent pricing plans for website development, business web applications, custom software, and ongoing maintenance care plans by VyuhaTech."
+        canonicalPath="/pricing"
+        schema={pricingSchema}
+      />
       {/* Background Enhancements */}
       <div className="pricing-bg-glow"></div>
       <div className="pricing-bg-grid"></div>
@@ -38,6 +58,8 @@ export default function PricingPage() {
             ✨ Simple & Transparent Pricing
           </motion.div>
           
+          <h1 className="visually-hidden">Transparent Web Development &amp; Software Pricing Plans</h1>
+
           <StrokeText
             text="Choose the Perfect Plan for Your Business"
             strokeColor="#A78BFA"
@@ -54,6 +76,7 @@ export default function PricingPage() {
             letterSpacing={-2}
             className="pricing-stroke-heading"
           />
+
           
           <motion.p 
             className="pricing-desc-main"
