@@ -468,13 +468,76 @@
 }
 
 @media (max-width: 768px) {
-  .section-title { font-size: 2.5rem; }
-  .story-content h2 { font-size: 2.5rem; }
-  .stats-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
-  .cta-actions { flex-direction: column; }
-  .about-hero { margin-bottom: 6rem; }
+  .about-page-container {
+    padding-top: 80px;
+    padding-bottom: 3rem;
+  }
+  .section-container {
+    padding: 0 1rem;
+    margin-bottom: 5rem;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .about-hero {
+    margin-bottom: 5rem;
+  }
+  .about-hero-sub {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .story-content h2 {
+    font-size: 2rem;
+  }
+  .story-content p {
+    font-size: 1rem;
+  }
+  .glass-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 20px;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .stat-number {
+    font-size: 2.75rem;
+  }
+  .stat-label {
+    font-size: 0.85rem;
+  }
+  .cta-section {
+    padding: 4rem 1rem;
+  }
+  .cta-content h2 {
+    font-size: 2.2rem;
+  }
+  .cta-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 0.75rem;
+  }
+  .cta-actions .btn-primary,
+  .cta-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
 }
 
-@media (max-width: 640px) {
-  .stats-grid { grid-template-columns: 1fr; }
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
 }

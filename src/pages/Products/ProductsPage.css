@@ -189,15 +189,38 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .products-page-container {
+    padding-top: 80px;
+  }
+  .products-content-wrapper {
+    padding: 2rem 1rem 4rem;
+    gap: 3rem;
+  }
+  .products-desc-main {
+    font-size: 1rem;
+  }
   .folder-showcase-container {
-    gap: 5rem;
-    padding: 2rem 1rem;
+    gap: 4rem;
+    padding: 1rem 0;
   }
   .folder-showcase-image-side {
-    min-height: 240px;
+    min-height: 250px;
   }
   .folder-industry-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+  .folder-industry-desc {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+  .folder-interaction-area {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+  .folder-instruction {
+    max-width: 100%;
   }
 }

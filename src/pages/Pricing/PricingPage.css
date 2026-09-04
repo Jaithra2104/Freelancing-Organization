@@ -933,11 +933,27 @@
 }
 
 @media (max-width: 768px) {
+  .pricing-page-container {
+    padding-top: 80px;
+  }
+  .pricing-content-wrapper {
+    padding: 2rem 1rem 4rem;
+    gap: 4rem;
+  }
   .pricing-cards-container, 
   .features-grid, 
   .care-plans-grid,
   .deliverables-grid {
     grid-template-columns: 1fr;
+  }
+  .pricing-stroke-heading {
+    margin-bottom: 1rem;
+  }
+  .pricing-desc-main {
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 2rem;
   }
   
   .pricing-card.popular {

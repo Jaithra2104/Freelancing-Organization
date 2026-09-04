@@ -387,11 +387,13 @@
 .pc-details p {
   font-weight: 600;
   position: relative;
-  top: -12px;
-  white-space: nowrap;
-  font-size: 16px;
+  top: -6px;
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+  max-width: 90%;
+  font-size: 14px;
   margin: 0 auto;
-  width: min-content;
   background-image: linear-gradient(to bottom, #fff, #4a4ac0);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: transparent;
