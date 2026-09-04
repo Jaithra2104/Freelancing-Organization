@@ -73,15 +73,15 @@ h1, h2, h3, h4, h5, h6 {
 /* ── HERO ── */
 .hero {
   position: relative;
-  height: 100vh;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
   overflow: hidden;
   background: var(--bg-900);
   box-sizing: border-box;
-  padding-top: 5rem; /* offset floating nav visually */
+  padding-top: 8.5rem; /* clearance below fixed PillNav */
 }
 
 .hero__plasma-bg {
