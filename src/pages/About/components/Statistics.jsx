@@ -2,10 +2,10 @@ import { motion } from 'motion/react';
 import CountUp from '../../../components/CountUp';
 
 const stats = [
-  { label: 'Projects Completed', value: 25, suffix: '+' },
-  { label: 'Industries Served', value: 10, suffix: '+' },
-  { label: 'Happy Clients', value: 20, suffix: '+' },
-  { label: 'Client Satisfaction', value: 100, suffix: '%' }
+  { label: 'Demo Websites', value: 12, suffix: '+' },
+  { label: 'Business Domains', value: 4, suffix: '+' },
+  { label: 'Team Members', value: 4, suffix: '' },
+  { label: 'Commitment to Quality', value: 100, suffix: '%' }
 ];
 
 export default function Statistics() {
