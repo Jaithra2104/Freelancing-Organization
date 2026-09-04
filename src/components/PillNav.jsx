@@ -170,10 +170,8 @@ const PillNav = ({
       gsap.to(menu, {
         opacity: 0,
         y: 10,
-        scaleY: 1,
         duration: 0.2,
         ease,
-        transformOrigin: 'top center',
         onComplete: () => {
           gsap.set(menu, { visibility: 'hidden' });
         }
@@ -181,7 +179,9 @@ const PillNav = ({
     }
   };
 
-  const toggleMobileMenu = () => {
+  const toggleMobileMenu = (e) => {
+    e?.preventDefault();
+    e?.stopPropagation();
     if (isMobileMenuOpen) {
       closeMobileMenu();
     } else {
@@ -197,14 +197,13 @@ const PillNav = ({
       }
 
       if (menu) {
-        gsap.set(menu, { visibility: 'visible' });
+        gsap.set(menu, { visibility: 'visible', display: 'block' });
         gsap.fromTo(
           menu,
-          { opacity: 0, y: 10, scaleY: 1 },
+          { opacity: 0, y: 10 },
           {
             opacity: 1,
             y: 0,
-            scaleY: 1,
             duration: 0.3,
             ease,
             transformOrigin: 'top center'
@@ -320,6 +319,7 @@ const PillNav = ({
         </div>
 
         <button
+          type="button"
           className="mobile-menu-button mobile-only"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
@@ -330,7 +330,11 @@ const PillNav = ({
         </button>
       </nav>
 
-      <div className="mobile-menu-popover mobile-only" ref={mobileMenuRef} style={cssVars}>
+      <div 
+        className={`mobile-menu-popover mobile-only ${isMobileMenuOpen ? 'is-open' : ''}`} 
+        ref={mobileMenuRef} 
+        style={cssVars}
+      >
         <ul className="mobile-menu-list">
           {items.map((item, i) => (
             <li key={item.href || `mobile-item-${i}`}>
