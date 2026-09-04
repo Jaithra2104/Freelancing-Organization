@@ -157,12 +157,26 @@
 
 .folder-interaction-area {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
   background: rgba(255, 255, 255, 0.02);
-  padding: 2rem;
-  border-radius: 20px;
+  padding: 3rem 1.5rem 2rem;
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.showcase-folder-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: auto;
 }
 
 .folder-instruction {
@@ -171,7 +185,8 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
-  max-width: 150px;
+  max-width: 100%;
+  text-align: center;
   opacity: 0.9;
 }
 
@@ -218,9 +233,10 @@
     flex-direction: column;
     text-align: center;
     gap: 1.25rem;
-    padding: 1.25rem;
+    padding: 2.25rem 1rem 1.5rem;
   }
   .folder-instruction {
     max-width: 100%;
+    font-size: 0.78rem;
   }
 }

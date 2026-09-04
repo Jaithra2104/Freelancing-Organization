@@ -62,8 +62,9 @@ export default function IndustryShowcaseCards({ industries }) {
               >
                 <Folder 
                   color="#A78BFA"
-                  size={1.3}
+                  size={1.15}
                   items={folderItems}
+                  className="showcase-folder-wrapper"
                 />
                 <p className="folder-instruction">Click folder to explore all four plans</p>
               </motion.div>
