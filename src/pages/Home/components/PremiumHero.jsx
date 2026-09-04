@@ -38,16 +38,6 @@ export default function PremiumHero() {
   return (
     <div className="hero__content" style={{ zIndex: 10, position: 'relative' }}>
       <motion.div 
-        className="premium-badge"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-      >
-        <div className="premium-badge-glow"></div>
-        🟢 Available for New Projects
-      </motion.div>
-
-      <motion.div 
         className="hero__mini-label"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -121,6 +111,16 @@ export default function PremiumHero() {
         <span>AI Solutions</span>
         <span className="dot">•</span>
         <span>Custom Software</span>
+      </motion.div>
+
+      <motion.div 
+        className="premium-badge"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 1.3 }}
+      >
+        <div className="premium-badge-glow"></div>
+        Available for New Projects
       </motion.div>
 
       <motion.div 
