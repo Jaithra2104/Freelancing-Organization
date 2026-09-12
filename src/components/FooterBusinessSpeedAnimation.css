@@ -1,17 +1,18 @@
 /* ============================================================
-   FOOTER BUSINESS SPEED ANIMATION — VYUHA_TECH
+   REALISTIC FOOTER BUSINESS SPEED ANIMATION — VYUHA_TECH
    ============================================================ */
 
 .footer-speed-animation-container {
   max-width: 1200px;
   margin: 0 auto 3.5rem auto;
-  padding: 1.75rem 2rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(167, 139, 250, 0.18);
-  border-radius: 24px;
-  backdrop-filter: blur(12px);
+  padding: 1.85rem 2.25rem;
+  background: linear-gradient(135deg, rgba(15, 12, 28, 0.85), rgba(24, 18, 42, 0.75));
+  border: 1px solid rgba(167, 139, 250, 0.22);
+  border-radius: 26px;
+  backdrop-filter: blur(16px);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
 /* Header inside Animation */
@@ -29,8 +30,8 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   color: #EC4899;
-  background: rgba(236, 72, 153, 0.12);
-  border: 1px solid rgba(236, 72, 153, 0.3);
+  background: rgba(236, 72, 153, 0.14);
+  border: 1px solid rgba(236, 72, 153, 0.35);
   padding: 0.25rem 0.65rem;
   border-radius: 6px;
   text-transform: uppercase;
@@ -38,54 +39,68 @@
 
 .speed-anim-heading {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #F8FAFC;
   letter-spacing: -0.2px;
   margin: 0;
 }
 
-/* Track Wrapper */
+/* Highway Track Wrapper */
 .speed-track-wrapper {
   position: relative;
-  height: 95px;
+  height: 115px;
   margin-bottom: 1rem;
-  border-radius: 16px;
-  background: rgba(10, 8, 24, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  background: radial-gradient(ellipse at center, rgba(20, 16, 38, 0.95), rgba(8, 6, 18, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
 }
 
-/* Road / Grid Lines */
+/* Realistic Highway Background */
 .speed-track-bg {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 10px 0;
   pointer-events: none;
 }
 
-.track-line {
-  width: 100%;
-  height: 1px;
+.track-asphalt {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 8px 8px;
+  opacity: 0.6;
 }
 
-.top-line, .bottom-line {
-  background: rgba(255, 255, 255, 0.06);
+.track-glow-top {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, rgba(148, 163, 184, 0.2), rgba(56, 189, 248, 0.4), rgba(148, 163, 184, 0.2));
+}
+
+.track-glow-bottom {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, rgba(236, 72, 153, 0.4), rgba(167, 139, 250, 0.6), rgba(236, 72, 153, 0.4));
 }
 
 .dash-line {
-  background-image: linear-gradient(to right, rgba(167, 139, 250, 0.3) 50%, transparent 50%);
-  background-size: 24px 1px;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(167, 139, 250, 0.5) 50%, transparent 50%);
+  background-size: 32px 2px;
   background-repeat: repeat-x;
-  animation: moveDashes 1.5s linear infinite;
+  animation: moveDashes 1.2s linear infinite;
 }
 
 @keyframes moveDashes {
   0% { background-position: 0 0; }
-  100% { background-position: -48px 0; }
+  100% { background-position: -64px 0; }
 }
 
 /* Shared Entity Position */
@@ -101,23 +116,24 @@
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.65rem;
   font-weight: 700;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.18rem 0.55rem;
+  border-radius: 6px;
   white-space: nowrap;
   margin-bottom: 4px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* 1. Walker Styling & Keyframes */
+/* 1. Walker Styling & Realistic Stride Animation */
 .entity-walker {
-  top: 8px;
+  top: 6px;
   left: 0;
   animation: walkProgress 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .entity-walker .entity-label-pill {
   background: rgba(148, 163, 184, 0.15);
-  color: #94A3B8;
+  color: #CBD5E1;
   border: 1px solid rgba(148, 163, 184, 0.3);
 }
 
@@ -125,20 +141,20 @@
   0% { transform: translateX(0%); }
   50% { transform: translateX(180%); }
   85% { transform: translateX(300%); }
-  100% { transform: translateX(340%); }
+  100% { transform: translateX(350%); }
 }
 
-/* 2. Bicycle Styling & Keyframes */
+/* 2. Bicycle Styling & Realistic Ride Animation */
 .entity-bicycle {
-  top: 24px;
+  top: 32px;
   left: 0;
   animation: bikeProgress 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .entity-bicycle .entity-label-pill {
-  background: rgba(203, 213, 225, 0.15);
-  color: #CBD5E1;
-  border: 1px solid rgba(203, 213, 225, 0.3);
+  background: rgba(56, 189, 248, 0.15);
+  color: #7DD3FC;
+  border: 1px solid rgba(56, 189, 248, 0.35);
 }
 
 @keyframes bikeProgress {
@@ -148,18 +164,18 @@
   100% { transform: translateX(520%); }
 }
 
-/* 3. VYUHA_TECH Car Styling & Keyframes */
+/* 3. VYUHA_TECH Cyber Supercar Acceleration */
 .entity-car {
-  bottom: 6px;
+  bottom: 4px;
   left: 0;
-  animation: carAccelerate 7s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  animation: carAccelerate 7s cubic-bezier(0.2, 0.9, 0.4, 1) infinite;
 }
 
 .car-pill {
-  background: rgba(236, 72, 153, 0.18);
+  background: rgba(236, 72, 153, 0.22);
   color: #F472B6;
-  border: 1px solid rgba(236, 72, 153, 0.4);
-  box-shadow: 0 0 10px rgba(236, 72, 153, 0.2);
+  border: 1px solid rgba(236, 72, 153, 0.45);
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
 }
 
 .car-wrapper {
@@ -168,44 +184,66 @@
   align-items: center;
 }
 
-/* Speed light trail behind car */
-.car-speed-trail {
+/* Realistic Speed Trails Behind Car */
+.car-speed-trail.outer-glow {
+  position: absolute;
+  right: 85%;
+  width: 140px;
+  height: 16px;
+  background: linear-gradient(to left, rgba(236, 72, 153, 0.7), rgba(124, 58, 237, 0.4), transparent);
+  filter: blur(6px);
+  border-radius: 8px;
+  animation: pulseOuterTrail 0.6s ease-in-out infinite alternate;
+}
+
+.car-speed-trail.core-beam {
   position: absolute;
   right: 90%;
-  width: 90px;
-  height: 8px;
-  background: linear-gradient(to left, rgba(236, 72, 153, 0.7), rgba(124, 58, 237, 0.4), transparent);
-  filter: blur(2px);
-  border-radius: 4px;
-  animation: pulseTrail 0.8s ease-in-out infinite alternate;
+  width: 100px;
+  height: 6px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.9), rgba(244, 114, 182, 0.8), transparent);
+  filter: blur(1.5px);
+  border-radius: 3px;
 }
 
-@keyframes pulseTrail {
-  0% { opacity: 0.5; width: 70px; }
-  100% { opacity: 0.95; width: 110px; }
+@keyframes pulseOuterTrail {
+  0% { opacity: 0.6; width: 110px; }
+  100% { opacity: 1; width: 160px; }
 }
 
+/* Wheel Rotation */
+.car-wheel {
+  transform-origin: center;
+  animation: rotateWheels 0.3s linear infinite;
+}
+
+@keyframes rotateWheels {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Car Acceleration Loop */
 @keyframes carAccelerate {
   0% { 
-    transform: translateX(-20%); 
-    opacity: 0.5;
+    transform: translateX(-25%); 
+    opacity: 0.4;
   }
-  15% {
-    transform: translateX(80%);
+  12% {
+    transform: translateX(60%);
     opacity: 1;
   }
-  50% {
-    transform: translateX(420%); /* Overtakes bicycle & walker */
+  48% {
+    transform: translateX(380%); /* Smooth overtake of bicycle & walker */
   }
-  80% {
-    transform: translateX(720%); /* Reaches lead */
+  78% {
+    transform: translateX(620%); /* Reaches front position */
   }
   92% {
-    transform: translateX(760%);
+    transform: translateX(650%);
     opacity: 1;
   }
   100% {
-    transform: translateX(820%);
+    transform: translateX(710%);
     opacity: 0;
   }
 }
@@ -216,13 +254,13 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .msg-highlight {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   background: linear-gradient(135deg, #A78BFA, #EC4899);
@@ -231,32 +269,32 @@
 }
 
 .msg-sub {
-  font-size: 0.8rem;
-  color: rgba(248, 248, 255, 0.5);
+  font-size: 0.82rem;
+  color: rgba(248, 248, 255, 0.55);
 }
 
 /* RESPONSIVE STYLING */
 @media (max-width: 900px) {
   .speed-entity svg {
-    transform: scale(0.85);
+    transform: scale(0.82);
     transform-origin: bottom center;
   }
 
   @keyframes carAccelerate {
-    0% { transform: translateX(-20%); opacity: 0.5; }
-    50% { transform: translateX(280%); }
-    80% { transform: translateX(480%); }
-    100% { transform: translateX(540%); opacity: 0; }
+    0% { transform: translateX(-25%); opacity: 0.4; }
+    48% { transform: translateX(250%); }
+    78% { transform: translateX(420%); }
+    100% { transform: translateX(480%); opacity: 0; }
   }
 
   @keyframes bikeProgress {
     0% { transform: translateX(0%); }
-    100% { transform: translateX(340%); }
+    100% { transform: translateX(300%); }
   }
 
   @keyframes walkProgress {
     0% { transform: translateX(0%); }
-    100% { transform: translateX(200%); }
+    100% { transform: translateX(180%); }
   }
 }
 
@@ -267,7 +305,7 @@
   }
 
   .speed-track-wrapper {
-    height: 110px;
+    height: 125px;
   }
 
   .speed-anim-footer-msg {
@@ -277,10 +315,10 @@
   }
 
   @keyframes carAccelerate {
-    0% { transform: translateX(-20%); opacity: 0.5; }
-    50% { transform: translateX(180%); }
-    80% { transform: translateX(280%); }
-    100% { transform: translateX(330%); opacity: 0; }
+    0% { transform: translateX(-25%); opacity: 0.4; }
+    48% { transform: translateX(140%); }
+    78% { transform: translateX(240%); }
+    100% { transform: translateX(280%); opacity: 0; }
   }
 }
 
@@ -290,11 +328,12 @@
   .entity-bicycle,
   .entity-car,
   .dash-line,
-  .car-speed-trail {
+  .car-speed-trail,
+  .car-wheel {
     animation: none !important;
   }
 
-  .entity-walker { left: 10%; }
-  .entity-bicycle { left: 45%; }
-  .entity-car { left: 75%; }
+  .entity-walker { left: 8%; }
+  .entity-bicycle { left: 40%; }
+  .entity-car { left: 72%; }
 }
