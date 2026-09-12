@@ -9,68 +9,128 @@ import ServiceCards from './components/ServiceCards';
 const services = [
   {
     icon: '🌐',
-    title: 'Business Website Development',
-    desc: 'Get a modern, fast website for your shop, restaurant, clinic, or business. Show your location, services, product photos, and business hours so local customers can easily find you on Google.',
+    title: 'Get Your Business Online',
+    desc: 'Get a professional online presence for your business so customers can easily find you, see what you offer, check your location and timings, and contact you whenever they need you.',
     tag: 'MOST POPULAR',
     highlights: [
-      'Works perfectly on all mobile phones',
-      'Direct WhatsApp & Call buttons for fast orders',
-      'Google Maps location & business hours setup'
+      'Works beautifully on mobile phones',
+      'Show your products, services & prices',
+      'Customers can easily find your location',
+      'One-click WhatsApp & Call buttons'
+    ],
+    detailedText: 'Your customers can see your business from anywhere, even before they visit your shop. We create a clean, modern online website for your business with your products, opening hours, Google Maps location, and instant WhatsApp contact buttons so local customers can reach you in one tap.',
+    modalIncludes: [
+      'Custom business website design',
+      'Mobile & tablet friendly layout',
+      'Google Maps & address integration',
+      'One-click WhatsApp & phone call buttons',
+      'Product & service showcase gallery',
+      'Simple online contact & enquiry form'
     ]
   },
   {
-    icon: '💻',
-    title: 'Online Order & Booking Systems',
-    desc: 'Let your customers view your menu, book appointments, order products, or send custom service requests directly through your website without paying heavy third-party commissions.',
-    tag: 'BUSINESS APPS',
+    icon: '🛒',
+    title: 'Let Customers Order & Book Online',
+    desc: 'Give your customers an easy way to order products, book appointments, reserve a time, or request your services directly from your website.',
+    tag: 'BUSINESS ORDERS',
     highlights: [
-      'Direct customer ordering with zero commission',
-      'Instant online booking & slot reservation',
-      'Automatic order details & receipt collection'
+      'Customers can place orders from anywhere',
+      'Customers can book appointments or time slots',
+      'Receive new order & booking requests easily',
+      'Reduce unnecessary calls and manual work'
+    ],
+    detailedText: 'Allow your customers to order food, products, or reserve appointments 24/7 without having to call you every time. Orders and booking requests arrive organized directly to your phone so you never lose a sale.',
+    modalIncludes: [
+      'Online product catalog & menu display',
+      'Appointment & time slot reservation system',
+      'Direct WhatsApp order notifications',
+      'Instant customer booking confirmations',
+      'Easy order enquiry management',
+      'Zero third-party commission fees'
     ]
   },
   {
     icon: '📊',
-    title: 'Easy Shop Admin Panel',
-    desc: 'A super simple, mobile-friendly owner dashboard. Easily change prices, upload new photos, check customer enquiries, and update your product or service list anytime without technical knowledge.',
+    title: 'Manage Your Business Easily',
+    desc: 'Keep your business information updated yourself. Change prices, add products, upload photos, update services, and check customer enquiries without needing technical knowledge.',
     tag: 'EASY CONTROL',
     highlights: [
-      'Update prices & food/product menus anytime',
-      'View & manage daily customer enquiries easily',
-      'Upload new photos to your business gallery'
+      'Change prices & product details anytime',
+      'Upload new photos whenever you want',
+      'See and manage customer enquiries',
+      'Keep your services and products up to date'
+    ],
+    detailedText: 'No technical skills needed. You get a simple owner login panel on your phone where you can change product prices, upload new shop photos, manage customer enquiries, and update your menu or service list anytime.',
+    modalIncludes: [
+      'Simple owner login on phone or laptop',
+      'Update prices & items in seconds',
+      'Add or remove shop photos anytime',
+      'View & organize customer enquiries',
+      'No developer needed for simple edits',
+      'One-click website updates'
     ]
   },
   {
     icon: '🤖',
-    title: 'WhatsApp & AI Auto-Reply Assistant',
-    desc: 'Never miss a customer lead again. Automatically reply to customer enquiries on WhatsApp 24/7, send instant booking confirmations, and answer common questions even when your shop is closed.',
-    tag: '24/7 AUTOMATION',
+    title: 'Let Your Business Handle Customers Automatically',
+    desc: 'Stay connected with your customers even when you are busy. Automate common questions, booking updates, reminders, and WhatsApp messages.',
+    tag: 'SMART BUSINESS',
     highlights: [
-      'Automatic 24/7 customer replies on WhatsApp',
-      'Instant order & appointment confirmation alerts',
-      'Automated customer reminders & follow-ups'
+      'Automatically answer common customer questions',
+      'Send WhatsApp updates and notifications',
+      'Remind customers about appointments',
+      'Help customers even outside business hours'
+    ],
+    detailedText: 'Save hours of manual effort every day. Automatic auto-replies on WhatsApp answer customer questions about pricing, availability, and location 24/7 even when your shop is closed or you are busy serving in-store clients.',
+    modalIncludes: [
+      '24/7 automated WhatsApp customer replies',
+      'Instant answers to location & pricing questions',
+      'Automatic appointment & booking reminders',
+      'Follow-up messages for customer enquiries',
+      'Custom auto-response messages',
+      'Runs automatically day and night'
     ]
   },
   {
-    icon: '🎨',
-    title: 'Modern Design & Visual Branding',
-    desc: 'Make your local business look attractive, trustworthy, and modern online. We design eye-catching layouts, digital menus, price catalogs, and banners tailored specifically to your shop.',
-    tag: 'SHOP BRANDING',
+    icon: '📍',
+    title: 'Help More Customers Find You',
+    desc: 'Make it easier for people nearby to discover your business when they search online for the products or services you provide.',
+    tag: 'GET FOUND',
     highlights: [
-      'Clean, attractive & easy-to-read layout',
-      'Custom digital menus & price catalog displays',
-      'Professional design that builds customer trust'
+      'Show your business on Google',
+      'Display your location and business hours',
+      'Help customers discover your services',
+      'Make it easy for customers to contact you'
+    ],
+    detailedText: 'When people in your city search for your products or services online, we make sure your business pops up on Google with your phone number, address, customer reviews, and map location.',
+    modalIncludes: [
+      'Google Maps & Search profile optimization',
+      'Local search visibility for your area',
+      'Display shop address, phone & working hours',
+      'Direct direction maps for new customers',
+      'Customer review & trust badges',
+      'Mobile-friendly search appearance'
     ]
   },
   {
-    icon: '🚀',
-    title: 'Domain, Hosting & Full Technical Support',
-    desc: 'We handle all the technical details for you — business domain registration, fast hosting, SSL security, website maintenance, backups, and friendly support whenever you need help.',
-    tag: 'COMPLETE SUPPORT',
+    icon: '💬',
+    title: 'Stay Connected With Your Customers',
+    desc: 'Keep your customers coming back with simple reminders, updates, offers, and follow-up messages.',
+    tag: 'CUSTOMER CARE',
     highlights: [
-      '1-Year Business Domain & Fast Hosting included',
-      'Free SSL Security & Automatic Backups',
-      'Friendly WhatsApp & Call Support whenever needed'
+      'Send customer updates & announcements',
+      'Send appointment & booking reminders',
+      'Follow up with customer enquiries',
+      'Keep customers connected with your business'
+    ],
+    detailedText: 'Turn one-time visitors into repeat buyers. Send automated appointment reminders, offer announcements, and polite follow-up messages so customers keep returning to your business.',
+    modalIncludes: [
+      'Customer contact list organization',
+      'Automated appointment reminder alerts',
+      'Offer & festival greeting messages',
+      'Polite customer enquiry follow-ups',
+      'Repeat customer engagement',
+      'Friendly technical & support setup'
     ]
   }
 ];
@@ -104,8 +164,8 @@ export default function ServicesPage() {
   return (
     <div className="services-page-container">
       <SEO
-        title="Web Development & Software Solutions | VyuhaTech"
-        description="Explore VyuhaTech's web development, custom software solutions, admin dashboards, AI business automation, and UI/UX design services."
+        title="Everything Your Business Needs to Grow Online | VyuhaTech"
+        description="We help local businesses get found, get more customers, manage their work easily, and save time with simple digital solutions."
         canonicalPath="/services"
         schema={servicesSchema}
       />
@@ -122,13 +182,13 @@ export default function ServicesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            ✨ Our Services
+            ✨ What We Do For Your Business
           </motion.div>
           
-          <h1 className="visually-hidden">Web Development &amp; Software Solutions</h1>
+          <h1 className="visually-hidden">Everything Your Business Needs to Grow Online</h1>
           
           <StrokeText
-            text="Digital Solutions Built for Growing Businesses"
+            text="Everything Your Business Needs to Grow Online"
             strokeColor="#A78BFA"
             fillColor="#F8FAFC"
             strokeWidth={1.4}
@@ -151,7 +211,7 @@ export default function ServicesPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            We build modern websites, custom business applications, admin dashboards, AI-powered automation, and scalable digital solutions that help businesses streamline operations and grow online.
+            We help local businesses get found, get more customers, manage their work easily, and save time with simple digital solutions.
           </motion.p>
         </header>
 
