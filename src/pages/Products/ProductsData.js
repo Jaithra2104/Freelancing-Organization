@@ -21,9 +21,9 @@ export const industryDemos = [
     description: 'Elegant event booking websites with galleries, pricing information, enquiry forms and premium business presentation.',
     image: '/images/function_hall.png',
     plans: {
-      basic: 'https://function-hall-basic.vercel.app',
-      pro: 'https://function-hall-pro.vercel.app/',
-      premium: null,
+      basic: 'https://function-hall-basic-version.vercel.app/',
+      pro: 'https://function-hall-premium.vercel.app/',
+      premium: 'https://function-hall-premium.vercel.app/',
       ultra: null
     }
   },

@@ -24,7 +24,7 @@ const businesses = [
     id: 'functionhall',
     name: 'Function Hall',
     icon: <FaBuilding />,
-    demoUrl: 'https://function-hall-pro.vercel.app/',
+    demoUrl: 'https://function-hall-premium.vercel.app/',
     features: [
       { title: 'Booking Calendar', desc: 'Availability checking', icon: <FaCalendarAlt /> },
       { title: 'Packages', desc: 'Dynamic pricing tiers', icon: <FaBoxOpen /> },
