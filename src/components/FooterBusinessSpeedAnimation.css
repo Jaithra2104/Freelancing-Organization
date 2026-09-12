@@ -1,11 +1,11 @@
 /* ============================================================
-   REALISTIC FOOTER BUSINESS SPEED ANIMATION — VYUHA_TECH
+   REALISTIC INFINITE HIGHWAY FOOTER ANIMATION — VYUHA_TECH
    ============================================================ */
 
 .footer-speed-animation-container {
   max-width: 1240px;
   margin: 0 auto 3.5rem auto;
-  padding: 1.75rem 2.25rem;
+  padding: 1.85rem 2.25rem;
   background: linear-gradient(135deg, rgba(12, 9, 24, 0.92), rgba(22, 16, 40, 0.85));
   border: 1px solid rgba(167, 139, 250, 0.28);
   border-radius: 28px;
@@ -64,7 +64,7 @@
   box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
-/* Realistic Highway Layer */
+/* Realistic Infinite Highway Track Background */
 .speed-track-bg {
   position: absolute;
   inset: 0;
@@ -77,8 +77,7 @@
 .track-asphalt-texture {
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
   background-size: 6px 6px;
   opacity: 0.7;
 }
@@ -109,6 +108,7 @@
 .glow-purple { background: #A78BFA; box-shadow: 0 0 6px #A78BFA; }
 .glow-pink { background: #EC4899; box-shadow: 0 0 6px #EC4899; }
 
+/* Continuous Infinite Dashed Line Scrolling */
 .dash-lane {
   position: absolute;
   top: 50%;
@@ -117,14 +117,14 @@
   background-image: linear-gradient(to right, rgba(167, 139, 250, 0.6) 50%, transparent 50%);
   background-size: 36px 2px;
   background-repeat: repeat-x;
-  animation: moveDashes 1s linear infinite;
+  animation: infiniteDashScroll 1.6s linear infinite;
 }
 
 .boost-active .dash-lane {
-  animation: moveDashes 0.5s linear infinite;
+  animation-duration: 0.8s;
 }
 
-@keyframes moveDashes {
+@keyframes infiniteDashScroll {
   0% { background-position: 0 0; }
   100% { background-position: -72px 0; }
 }
@@ -150,11 +150,11 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* 1. Walker Physics & Keyframes */
+/* 1. Traditional Walker — Stationary Position at 6% with Continuous Stride */
 .entity-walker {
   top: 8px;
-  left: 0;
-  animation: walkProgress 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  left: 6%;
+  animation: continuousWalkerFloat 3s ease-in-out infinite alternate;
 }
 
 .entity-walker .entity-label-pill {
@@ -166,37 +166,35 @@
 .leg-back {
   transform-box: fill-box;
   transform-origin: top center;
-  animation: legStrideBack 0.8s ease-in-out infinite alternate;
+  animation: legStrideBack 1s ease-in-out infinite alternate;
 }
 
 .leg-front {
   transform-box: fill-box;
   transform-origin: top center;
-  animation: legStrideFront 0.8s ease-in-out infinite alternate;
+  animation: legStrideFront 1s ease-in-out infinite alternate;
 }
 
 @keyframes legStrideBack {
-  0% { transform: rotate(-12deg); }
-  100% { transform: rotate(15deg); }
+  0% { transform: rotate(-10deg); }
+  100% { transform: rotate(12deg); }
 }
 
 @keyframes legStrideFront {
-  0% { transform: rotate(15deg); }
-  100% { transform: rotate(-12deg); }
+  0% { transform: rotate(12deg); }
+  100% { transform: rotate(-10deg); }
 }
 
-@keyframes walkProgress {
-  0% { transform: translateX(0%); }
-  50% { transform: translateX(180%); }
-  85% { transform: translateX(300%); }
-  100% { transform: translateX(350%); }
+@keyframes continuousWalkerFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(1px); }
 }
 
-/* 2. Bicycle Physics & Keyframes */
+/* 2. Bicycle Rider — Stationary Position at 36% with Continuous Wheel Spin */
 .entity-bicycle {
   top: 36px;
-  left: 0;
-  animation: bikeProgress 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  left: 36%;
+  animation: continuousBikeFloat 2.8s ease-in-out infinite alternate;
 }
 
 .entity-bicycle .entity-label-pill {
@@ -205,11 +203,10 @@
   border: 1px solid rgba(56, 189, 248, 0.35);
 }
 
-/* Perfect Rotation in Place Around Axle Center */
 .wheel-spin {
   transform-box: fill-box;
   transform-origin: center;
-  animation: rotateSpokesInPlace 0.5s linear infinite;
+  animation: rotateSpokesInPlace 0.7s linear infinite;
 }
 
 @keyframes rotateSpokesInPlace {
@@ -217,22 +214,16 @@
   100% { transform: rotate(360deg); }
 }
 
-@keyframes bikeProgress {
-  0% { transform: translateX(0%); }
-  35% { transform: translateX(220%); }
-  75% { transform: translateX(450%); }
-  100% { transform: translateX(520%); }
+@keyframes continuousBikeFloat {
+  0% { transform: translateY(0px) translateX(0px); }
+  100% { transform: translateY(-1.5px) translateX(4px); }
 }
 
-/* 3. VYUHA_TECH Cyber Supercar Hyper Acceleration */
+/* 3. VYUHA_TECH Cyber Supercar — PERMANENTLY AHEAD at 68% with Continuous Slow Cruise Loop */
 .entity-car {
   bottom: 4px;
-  left: 0;
-  animation: carAccelerate 7s cubic-bezier(0.2, 0.9, 0.4, 1) infinite;
-}
-
-.boost-active .entity-car {
-  animation-duration: 4.5s;
+  left: 65%;
+  animation: continuousCarCruise 4s ease-in-out infinite;
 }
 
 .car-pill {
@@ -261,18 +252,18 @@
 .car-speed-trail.outer-glow {
   position: absolute;
   right: 85%;
-  width: 150px;
+  width: 130px;
   height: 18px;
   background: linear-gradient(to left, rgba(236, 72, 153, 0.75), rgba(124, 58, 237, 0.45), transparent);
   filter: blur(8px);
   border-radius: 8px;
-  animation: pulseOuterTrail 0.5s ease-in-out infinite alternate;
+  animation: pulseOuterTrail 1s ease-in-out infinite alternate;
 }
 
 .car-speed-trail.core-beam {
   position: absolute;
   right: 90%;
-  width: 110px;
+  width: 95px;
   height: 7px;
   background: linear-gradient(to left, rgba(255, 255, 255, 0.95), rgba(244, 114, 182, 0.85), transparent);
   filter: blur(2px);
@@ -280,20 +271,24 @@
 }
 
 .boost-active .car-speed-trail.outer-glow {
-  width: 220px;
+  width: 190px;
   background: linear-gradient(to left, rgba(236, 72, 153, 0.95), rgba(56, 189, 248, 0.8), transparent);
 }
 
 @keyframes pulseOuterTrail {
-  0% { opacity: 0.6; width: 120px; }
-  100% { opacity: 1; width: 170px; }
+  0% { opacity: 0.6; width: 110px; }
+  100% { opacity: 1; width: 150px; }
 }
 
-/* Perfect Rotation in Place Around Axle Center for Supercar Wheels */
+/* Supercar Wheels Rotating Continuously in Place */
 .wheel-rotate {
   transform-box: fill-box;
   transform-origin: center;
-  animation: rotateSupercarWheelInPlace 0.25s linear infinite;
+  animation: rotateSupercarWheelInPlace 0.35s linear infinite;
+}
+
+.boost-active .wheel-rotate {
+  animation-duration: 0.18s;
 }
 
 @keyframes rotateSupercarWheelInPlace {
@@ -301,28 +296,16 @@
   100% { transform: rotate(360deg); }
 }
 
-@keyframes carAccelerate {
+/* Continuous Slow Cruise Loop Ahead of the Rest — Never Resets or Restarts */
+@keyframes continuousCarCruise {
   0% { 
-    transform: translateX(-25%); 
-    opacity: 0.4;
+    transform: translateX(0px) translateY(0px); 
   }
-  12% {
-    transform: translateX(60%);
-    opacity: 1;
+  50% { 
+    transform: translateX(16px) translateY(-1px); 
   }
-  48% {
-    transform: translateX(380%);
-  }
-  78% {
-    transform: translateX(620%);
-  }
-  92% {
-    transform: translateX(650%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(710%);
-    opacity: 0;
+  100% { 
+    transform: translateX(0px) translateY(0px); 
   }
 }
 
@@ -353,26 +336,13 @@
 
 /* RESPONSIVE STYLING */
 @media (max-width: 900px) {
+  .entity-walker { left: 4%; }
+  .entity-bicycle { left: 32%; }
+  .entity-car { left: 58%; }
+
   .speed-entity svg {
     transform: scale(0.82);
     transform-origin: bottom center;
-  }
-
-  @keyframes carAccelerate {
-    0% { transform: translateX(-25%); opacity: 0.4; }
-    48% { transform: translateX(250%); }
-    78% { transform: translateX(420%); }
-    100% { transform: translateX(480%); opacity: 0; }
-  }
-
-  @keyframes bikeProgress {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(300%); }
-  }
-
-  @keyframes walkProgress {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(180%); }
   }
 }
 
@@ -386,17 +356,14 @@
     height: 130px;
   }
 
+  .entity-walker { left: 2%; }
+  .entity-bicycle { left: 30%; }
+  .entity-car { left: 52%; }
+
   .speed-anim-footer-msg {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.3rem;
-  }
-
-  @keyframes carAccelerate {
-    0% { transform: translateX(-25%); opacity: 0.4; }
-    48% { transform: translateX(140%); }
-    78% { transform: translateX(240%); }
-    100% { transform: translateX(280%); opacity: 0; }
   }
 }
 
@@ -413,8 +380,4 @@
   .leg-front {
     animation: none !important;
   }
-
-  .entity-walker { left: 8%; }
-  .entity-bicycle { left: 40%; }
-  .entity-car { left: 72%; }
 }
