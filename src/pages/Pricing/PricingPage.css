@@ -161,6 +161,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -234,6 +235,21 @@
   font-size: 0.85rem;
 }
 
+.discount-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  padding: 0.3rem 0.75rem;
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  border-radius: 99px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  z-index: 2;
+}
+
 .pricing-header-block {
   margin-bottom: 1rem;
 }
@@ -256,13 +272,42 @@
   margin-bottom: 1.25rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  min-height: 95px;
+  display: flex;
+  align-items: flex-end;
 }
 
-.normal-price-container {
+.normal-price-container,
+.discount-price-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.15rem;
+  width: 100%;
+}
+
+.price-strikethrough-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pricing-price-original {
+  font-size: 1.15rem;
+  text-decoration: line-through;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.launch-offer-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #34D399;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
 }
 
 .pricing-price {
@@ -271,6 +316,10 @@
   color: #ffffff;
   line-height: 1.1;
   letter-spacing: -0.02em;
+}
+
+.pricing-price.discounted {
+  color: #F8FAFC;
 }
 
 .pricing-unit {
@@ -286,7 +335,7 @@
   color: #94A3B8;
   line-height: 1.55;
   margin-bottom: 1.75rem;
-  min-height: 56px;
+  min-height: 52px;
 }
 
 .pricing-features {
