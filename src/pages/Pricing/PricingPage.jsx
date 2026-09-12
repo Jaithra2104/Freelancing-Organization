@@ -84,9 +84,9 @@ export default function PricingPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            Every business is different.
+            Digital Business Solutions built to help your business scale.
             <br/><br/>
-            Whether you need a simple website to showcase your business or a complete digital solution to manage your customers and daily operations, we have a plan that fits your goals.
+            From establishing a professional online presence to lead generation, content management, and complete AI-powered business automation — choose the plan tailored to your growth goals.
           </motion.p>
         </header>
 
