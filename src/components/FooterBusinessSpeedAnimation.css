@@ -154,6 +154,9 @@
 .entity-walker {
   top: 8px;
   left: 6%;
+}
+
+.walker-graphic {
   animation: continuousWalkerFloat 3s ease-in-out infinite alternate;
 }
 
@@ -194,6 +197,9 @@
 .entity-bicycle {
   top: 36px;
   left: 36%;
+}
+
+.bicycle-graphic {
   animation: continuousBikeFloat 2.8s ease-in-out infinite alternate;
 }
 
@@ -219,11 +225,10 @@
   100% { transform: translateY(-1.5px) translateX(4px); }
 }
 
-/* 3. VYUHA_TECH Cyber Supercar — PERMANENTLY AHEAD at 68% with Continuous Slow Cruise Loop */
+/* 3. VYUHA_TECH Cyber Supercar — PERMANENTLY AHEAD at 65% with Continuous Slow Cruise Loop */
 .entity-car {
   bottom: 4px;
   left: 65%;
-  animation: continuousCarCruise 4s ease-in-out infinite;
 }
 
 .car-pill {
@@ -237,6 +242,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  animation: continuousCarCruise 4s ease-in-out infinite;
 }
 
 .car-headlight-cone {
@@ -334,44 +340,170 @@
   color: rgba(248, 248, 255, 0.55);
 }
 
-/* RESPONSIVE STYLING */
+/* RESPONSIVE STYLING — PERFECT MOBILE & TABLET LAYOUT */
 @media (max-width: 900px) {
-  .entity-walker { left: 4%; }
-  .entity-bicycle { left: 32%; }
-  .entity-car { left: 58%; }
+  .footer-speed-animation-container {
+    max-width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+  }
 
-  .speed-entity svg {
-    transform: scale(0.82);
-    transform-origin: bottom center;
+  .entity-walker {
+    left: 3%;
+    top: 10px;
+    transform: scale(0.85);
+    transform-origin: top left;
+  }
+
+  .entity-bicycle {
+    left: 33%;
+    top: 32px;
+    transform: scale(0.85);
+    transform-origin: top left;
+  }
+
+  .entity-car {
+    left: 58%;
+    bottom: 4px;
+    transform: scale(0.85);
+    transform-origin: bottom left;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .footer-speed-animation-container {
-    padding: 1.25rem 1rem;
-    margin-bottom: 2.5rem;
+    padding: 1.15rem 0.85rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+  }
+
+  .speed-anim-header {
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .speed-anim-tag {
+    font-size: 0.62rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .speed-anim-heading {
+    font-size: 0.88rem;
+    letter-spacing: -0.2px;
   }
 
   .speed-track-wrapper {
-    height: 130px;
+    height: 110px;
+    border-radius: 14px;
   }
 
-  .entity-walker { left: 2%; }
-  .entity-bicycle { left: 30%; }
-  .entity-car { left: 52%; }
+  .entity-walker {
+    left: 2%;
+    top: 6px;
+    transform: scale(0.68);
+    transform-origin: top left;
+  }
+
+  .entity-bicycle {
+    left: 28%;
+    top: 26px;
+    transform: scale(0.68);
+    transform-origin: top left;
+  }
+
+  .entity-car {
+    left: 50%;
+    bottom: 4px;
+    transform: scale(0.68);
+    transform-origin: bottom left;
+  }
+
+  .entity-label-pill {
+    font-size: 0.54rem;
+    padding: 0.12rem 0.38rem;
+    margin-bottom: 2px;
+    letter-spacing: 0.02em;
+  }
 
   .speed-anim-footer-msg {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.3rem;
+    gap: 0.2rem;
+    padding-top: 0.5rem;
+  }
+
+  .msg-highlight {
+    font-size: 0.8rem;
+  }
+
+  .msg-sub {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .speed-anim-heading {
+    font-size: 0.78rem;
+  }
+
+  .speed-track-wrapper {
+    height: 100px;
+  }
+
+  .entity-walker {
+    left: 1%;
+    top: 4px;
+    transform: scale(0.56);
+    transform-origin: top left;
+  }
+
+  .entity-bicycle {
+    left: 25%;
+    top: 20px;
+    transform: scale(0.56);
+    transform-origin: top left;
+  }
+
+  .entity-car {
+    left: 46%;
+    bottom: 2px;
+    transform: scale(0.56);
+    transform-origin: bottom left;
+  }
+
+  .entity-label-pill {
+    font-size: 0.48rem;
+    padding: 0.1rem 0.32rem;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 340px) {
+  .entity-walker {
+    left: 0%;
+    transform: scale(0.48);
+  }
+
+  .entity-bicycle {
+    left: 23%;
+    transform: scale(0.48);
+  }
+
+  .entity-car {
+    left: 43%;
+    transform: scale(0.48);
+  }
+
+  .entity-label-pill {
+    font-size: 0.44rem;
   }
 }
 
 /* PREFERS REDUCED MOTION ACCESSIBILITY FALLBACK */
 @media (prefers-reduced-motion: reduce) {
-  .entity-walker,
-  .entity-bicycle,
-  .entity-car,
+  .walker-graphic,
+  .bicycle-graphic,
+  .car-wrapper,
   .dash-lane,
   .car-speed-trail,
   .wheel-rotate,
