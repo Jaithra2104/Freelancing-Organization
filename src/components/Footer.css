@@ -101,6 +101,23 @@
   transform: translateX(4px);
 }
 
+.footer-cookie-pref-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text-muted, #94A3B8);
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-align: left;
+}
+
+.footer-cookie-pref-btn:hover {
+  color: var(--purple-400, #A78BFA);
+  transform: translateX(4px);
+}
+
 .footer-contact-info {
   list-style: none;
   padding: 0;

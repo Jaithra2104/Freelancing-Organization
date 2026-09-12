@@ -20,6 +20,9 @@ import TermsAndConditions from './pages/Legal/TermsAndConditions';
 import RefundPolicy from './pages/Legal/RefundPolicy';
 import CookiePolicy from './pages/Legal/CookiePolicy';
 import Footer from './components/Footer';
+import { CookieConsentProvider } from './context/CookieConsentContext';
+import CookieConsentBanner from './components/CookieConsent/CookieConsentBanner';
+import CookiePreferencesModal from './components/CookieConsent/CookiePreferencesModal';
 import {
   SiReact, SiNextdotjs, SiTypescript, SiPython, SiRust,
   SiDocker, SiKubernetes, SiTerraform, SiGraphql,
@@ -127,7 +130,7 @@ function App() {
 
 
   return (
-    <>
+    <CookieConsentProvider>
       <PillNav
         logo="/logo.jpeg"
         logoAlt="VYUHA TECH"
@@ -157,7 +160,11 @@ function App() {
 
       {/* ── FOOTER ── */}
       <Footer />
-    </>
+
+      {/* ── COOKIE CONSENT BANNER & MODAL ── */}
+      <CookieConsentBanner />
+      <CookiePreferencesModal />
+    </CookieConsentProvider>
   );
 }
 

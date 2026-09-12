@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import { FiTwitter, FiLinkedin, FiGithub, FiYoutube, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { useCookieConsent } from '../context/CookieConsentContext';
 import FooterBusinessSpeedAnimation from './FooterBusinessSpeedAnimation';
 import './Footer.css';
 
 export default function Footer() {
+  const { openPreferencesModal } = useCookieConsent();
+
   return (
     <footer className="global-footer">
       <FooterBusinessSpeedAnimation />
@@ -44,9 +47,18 @@ export default function Footer() {
           <h3>Legal</h3>
           <ul className="footer-links">
             <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link to="/terms-and-conditions">Terms & Conditions</Link></li>
+            <li><Link to="/terms-and-conditions">Terms &amp; Conditions</Link></li>
             <li><Link to="/refund-policy">Refund Policy</Link></li>
             <li><Link to="/cookie-policy">Cookie Policy</Link></li>
+            <li>
+              <button 
+                type="button" 
+                onClick={openPreferencesModal}
+                className="footer-cookie-pref-btn"
+              >
+                Cookie Preferences
+              </button>
+            </li>
           </ul>
         </div>
 

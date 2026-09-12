@@ -6,9 +6,12 @@ import PolicyAccordion from './components/PolicyAccordion';
 import ContactCard from './components/ContactCard';
 import CTASection from './components/CTASection';
 import { FiCheckCircle, FiTrendingUp, FiSliders, FiBarChart2, FiShield, FiSettings } from 'react-icons/fi';
+import { useCookieConsent } from '../../context/CookieConsentContext';
 import './Legal.css';
 
 export default function CookiePolicy() {
+  const { openPreferencesModal } = useCookieConsent();
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
@@ -71,6 +74,16 @@ export default function CookiePolicy() {
 
           <PolicyAccordion title="6. Managing Cookies" index={5}>
             <p>You can control and/or delete cookies as you wish. Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline cookies if you prefer. However, this may prevent you from taking full advantage of the website.</p>
+            <div style={{ marginTop: '1.25rem' }}>
+              <button 
+                type="button" 
+                onClick={openPreferencesModal}
+                className="btn-legal-primary"
+                style={{ cursor: 'pointer', border: 'none' }}
+              >
+                Manage Cookie Preferences
+              </button>
+            </div>
           </PolicyAccordion>
 
           <PolicyAccordion title="7. Changes to Policy" index={6}>
