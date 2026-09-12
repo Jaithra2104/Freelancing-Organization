@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export default function ServiceCards({ services }) {
   return (
@@ -12,17 +13,35 @@ export default function ServiceCards({ services }) {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: i * 0.1, type: "spring", stiffness: 100 }}
         >
-          <div className="service-icon-wrapper">
-            <span className="service-icon-emoji">{s.icon}</span>
+          <div className="service-card-top-row">
+            <div className="service-icon-wrapper">
+              <span className="service-icon-emoji">{s.icon}</span>
+            </div>
+            <span className="service-card-tag">{s.tag}</span>
           </div>
+
           <h3 className="service-card-title">{s.title}</h3>
           <p className="service-card-desc">{s.desc}</p>
+
+          {s.highlights && (
+            <ul className="service-card-highlights">
+              {s.highlights.map((item, idx) => (
+                <li key={idx} className="service-highlight-item">
+                  <span className="highlight-bullet">✦</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
           <div className="service-card-bottom">
-            <span className="service-card-tag">{s.tag}</span>
-            <span className="service-card-link">Learn More &rarr;</span>
+            <Link to="/contact" className="service-card-link" style={{ textDecoration: 'none' }}>
+              Explore Capabilities &rarr;
+            </Link>
           </div>
         </motion.div>
       ))}
     </div>
   );
 }
+

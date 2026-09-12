@@ -9,40 +9,70 @@ import ServiceCards from './components/ServiceCards';
 const services = [
   {
     icon: '🌐',
-    title: 'Website Development',
-    desc: 'Build fast, responsive, SEO-friendly business websites that create a strong online presence and convert visitors into customers.',
-    tag: 'CORE SERVICE',
+    title: 'Custom Web Development',
+    desc: 'High-performance, bespoke web architectures designed for maximum conversion, search visibility, and seamless cross-device responsiveness.',
+    tag: 'CORE ENGINEERING',
+    highlights: [
+      'High-Speed Next.js & React Frameworks',
+      'Mobile-First & Cross-Platform Optimization',
+      'Technical SEO & Core Web Vitals Mastery'
+    ]
   },
   {
     icon: '💻',
-    title: 'Business Web Applications',
-    desc: 'Develop custom web applications tailored to automate workflows, manage operations, and improve business productivity.',
-    tag: 'BUSINESS SOLUTIONS',
+    title: 'Enterprise Web Applications',
+    desc: 'Tailored web software and SaaS platforms built to digitize core operations, streamline internal workflows, and scale business output.',
+    tag: 'SCALABLE PLATFORMS',
+    highlights: [
+      'Custom Business Portals & Client Dashboards',
+      'Secure REST/GraphQL API Architectures',
+      'Role-Based Access Control & Data Encryption'
+    ]
   },
   {
     icon: '📊',
-    title: 'Admin Dashboards & CMS',
-    desc: 'Create secure management dashboards that allow business owners to manage bookings, products, customers, galleries, reports, and content effortlessly.',
-    tag: 'MANAGEMENT',
+    title: 'Admin Dashboards & Custom CMS',
+    desc: 'Centralized operational hubs enabling non-technical teams to effortlessly manage inventories, bookings, customer records, and live content.',
+    tag: 'BUSINESS CONTROL',
+    highlights: [
+      'Real-Time Sales & Booking Management',
+      'Visual Content & Gallery Publishing Controls',
+      'Exportable Financial & Customer Analytics'
+    ]
   },
   {
     icon: '🤖',
-    title: 'AI & Business Automation',
-    desc: 'Integrate WhatsApp automation, AI chatbots, email workflows, appointment reminders, and intelligent business automation.',
-    tag: 'AUTOMATION',
+    title: 'AI Assistants & Automation',
+    desc: 'Intelligent automation workflows and 24/7 AI agents that handle customer support, schedule appointments, and execute WhatsApp follow-ups.',
+    tag: 'SMART AUTOMATION',
+    highlights: [
+      '24/7 Conversational AI Customer Support',
+      'Automated WhatsApp & Email Workflows',
+      'Instant Lead Routing & CRM Synchronization'
+    ]
   },
   {
     icon: '🎨',
-    title: 'UI/UX Design',
-    desc: 'Craft elegant, responsive, and intuitive interfaces that provide exceptional user experiences across every device.',
-    tag: 'DESIGN',
+    title: 'Strategic UI/UX & Brand Design',
+    desc: 'Human-centered digital interfaces crafted to captivate users, eliminate friction, lower bounce rates, and deliver memorable brand experiences.',
+    tag: 'PRODUCT DESIGN',
+    highlights: [
+      'High-Fidelity Interactive Prototypes',
+      'Modern Dark Mode & Glassmorphism Aesthetics',
+      'Micro-Interactions & Fluid Motion FX'
+    ]
   },
   {
     icon: '🚀',
-    title: 'Hosting, Deployment & Maintenance',
-    desc: 'Handle domain setup, hosting, SSL, deployment, monitoring, backups, maintenance, updates, and long-term technical support.',
-    tag: 'SUPPORT',
-  },
+    title: 'DevOps & Managed Infrastructure',
+    desc: 'End-to-end cloud hosting setup, SSL security hardening, continuous performance monitoring, and guaranteed 99.9% operational reliability.',
+    tag: 'MANAGED INFRASTRUCTURE',
+    highlights: [
+      'Global Edge CDN & SSL Hardening',
+      'Automated Backups & Disaster Recovery',
+      'Dedicated Technical Maintenance & SLA'
+    ]
+  }
 ];
 
 export default function ServicesPage() {
