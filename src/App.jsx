@@ -13,6 +13,7 @@ import HomePage from './pages/Home/HomePage';
 import ServicesPage from './pages/Services/ServicesPage';
 import PricingPage from './pages/Pricing/PricingPage';
 import ProductsPage from './pages/Products/ProductsPage';
+import ReviewsPage from './pages/Reviews/ReviewsPage';
 import NotFoundPage from './pages/NotFound/NotFoundPage';
 import PrivacyPolicy from './pages/Legal/PrivacyPolicy';
 import TermsAndConditions from './pages/Legal/TermsAndConditions';
@@ -102,6 +103,7 @@ const navItems = [
   { label: 'SERVICES', href: '/services' },
   { label: 'DEMO WEBSITES', href: '/products' },
   { label: 'PRICING', href: '/pricing' },
+  { label: 'REVIEWS', href: '/reviews' },
   { label: 'ABOUT', href: '/about' },
   { label: 'TEAM', href: '/team' },
   { label: 'CONTACT', href: '/contact' }
@@ -142,6 +144,7 @@ function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/contact" element={<ContactPage />} />
