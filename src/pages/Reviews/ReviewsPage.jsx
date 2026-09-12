@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
-import StrokeText from '../../components/StrokeText';
 import { 
   FiAward, 
   FiTrendingUp, 
@@ -132,30 +131,15 @@ export default function ReviewsPage() {
             ✨ FIRST CLIENT OPPORTUNITY
           </motion.div>
           
-          <h1 className="visually-hidden">Be One of Our First Clients</h1>
-          
-          <StrokeText
-            text="Be One of Our First Clients 🚀"
-            strokeColor="#A78BFA"
-            fillColor="#F8FAFC"
-            strokeWidth={1.4}
-            drawDuration={1.6}
-            fillDelay={0.2}
-            stagger={0.05}
-            ease="power2.out"
-            trigger="mount"
-            fillMode="wipe"
-            fontSize={72}
-            fontWeight={800}
-            letterSpacing={-2}
-            className="reviews-stroke-heading"
-          />
+          <h1 className="reviews-main-title">
+            Be One of Our First Clients <span className="title-emoji">🚀</span>
+          </h1>
 
           <motion.p 
             className="reviews-desc-main"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 1, delay: 0.3 }}
           >
             We're looking for a few local businesses to become part of our first success stories. Get your business online, share your experience with us, and we'll help showcase your business to our audience.
           </motion.p>
