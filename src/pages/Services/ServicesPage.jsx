@@ -8,9 +8,9 @@ import ServiceCards from './components/ServiceCards';
 
 const services = [
   {
-    icon: '🌐',
+    iconType: 'globe',
     title: 'Get Your Business Online',
-    desc: 'Get a professional online presence for your business so customers can easily find you, see what you offer, check your location and timings, and contact you whenever they need you.',
+    desc: 'Give your business a professional online presence so customers can easily find you, see what you offer, check your location and timings, and contact you whenever they need you.',
     tag: 'MOST POPULAR',
     highlights: [
       'Works beautifully on mobile phones',
@@ -18,18 +18,31 @@ const services = [
       'Customers can easily find your location',
       'One-click WhatsApp & Call buttons'
     ],
-    detailedText: 'Your customers can see your business from anywhere, even before they visit your shop. We create a clean, modern online website for your business with your products, opening hours, Google Maps location, and instant WhatsApp contact buttons so local customers can reach you in one tap.',
-    modalIncludes: [
-      'Custom business website design',
-      'Mobile & tablet friendly layout',
-      'Google Maps & address integration',
-      'One-click WhatsApp & phone call buttons',
-      'Product & service showcase gallery',
-      'Simple online contact & enquiry form'
-    ]
+    modalIntro: 'Your customers are already searching online. Give them a simple place to discover your business, understand what you offer, and contact you.',
+    modalHelps: [
+      'Customers can find your business online',
+      'Your business looks more professional',
+      'Customers can see products and services',
+      'Customers can check your location and timings',
+      'Customers can contact you instantly'
+    ],
+    modalGets: [
+      'Professional business website',
+      'Mobile-friendly pages',
+      'Products / services section',
+      'Business photos',
+      'Location & Google Maps',
+      'WhatsApp contact',
+      'Call button',
+      'Enquiry form',
+      'Business hours',
+      'Social media links'
+    ],
+    perfectFor: 'Shops • Restaurants • Salons • Clinics • Gyms • Boutiques • Local Services',
+    ctaText: 'Get My Business Online →'
   },
   {
-    icon: '🛒',
+    iconType: 'cart',
     title: 'Let Customers Order & Book Online',
     desc: 'Give your customers an easy way to order products, book appointments, reserve a time, or request your services directly from your website.',
     tag: 'BUSINESS ORDERS',
@@ -39,20 +52,31 @@ const services = [
       'Receive new order & booking requests easily',
       'Reduce unnecessary calls and manual work'
     ],
-    detailedText: 'Allow your customers to order food, products, or reserve appointments 24/7 without having to call you every time. Orders and booking requests arrive organized directly to your phone so you never lose a sale.',
-    modalIncludes: [
-      'Online product catalog & menu display',
-      'Appointment & time slot reservation system',
-      'Direct WhatsApp order notifications',
-      'Instant customer booking confirmations',
-      'Easy order enquiry management',
-      'Zero third-party commission fees'
-    ]
+    modalIntro: 'Stop depending only on phone calls and messages. Let customers place orders or request appointments whenever it is convenient for them.',
+    modalHelps: [
+      'Customers can order without calling',
+      'Customers can request appointments',
+      'Customers can select preferred time slots',
+      'You receive new requests in one place',
+      'Less manual work for you'
+    ],
+    modalGets: [
+      'Online order requests',
+      'Appointment booking',
+      'Time-slot selection',
+      'Booking request management',
+      'Customer details collection',
+      'Order details',
+      'Booking notifications',
+      'WhatsApp communication'
+    ],
+    perfectFor: 'Restaurants • Salons • Clinics • Doctors • Repair Services • Consultants • Service Businesses',
+    ctaText: 'Start Taking Orders & Bookings →'
   },
   {
-    icon: '📊',
+    iconType: 'dashboard',
     title: 'Manage Your Business Easily',
-    desc: 'Keep your business information updated yourself. Change prices, add products, upload photos, update services, and check customer enquiries without needing technical knowledge.',
+    desc: 'Update your business information yourself without depending on a developer every time. Change prices, add products, upload photos, and check customer enquiries from one simple place.',
     tag: 'EASY CONTROL',
     highlights: [
       'Change prices & product details anytime',
@@ -60,20 +84,32 @@ const services = [
       'See and manage customer enquiries',
       'Keep your services and products up to date'
     ],
-    detailedText: 'No technical skills needed. You get a simple owner login panel on your phone where you can change product prices, upload new shop photos, manage customer enquiries, and update your menu or service list anytime.',
-    modalIncludes: [
-      'Simple owner login on phone or laptop',
-      'Update prices & items in seconds',
-      'Add or remove shop photos anytime',
-      'View & organize customer enquiries',
-      'No developer needed for simple edits',
-      'One-click website updates'
-    ]
+    modalIntro: 'You should not have to call a developer every time you want to change a price, add a product, or upload a new photo.',
+    modalHelps: [
+      'Update information yourself',
+      'Keep prices current',
+      'Add new products',
+      'Change photos',
+      'Check customer enquiries',
+      'Manage bookings'
+    ],
+    modalGets: [
+      'Simple owner dashboard',
+      'Product management',
+      'Service management',
+      'Price updates',
+      'Photo updates',
+      'Customer enquiry management',
+      'Booking management',
+      'Business information updates'
+    ],
+    perfectFor: 'Shops • Restaurants • Boutiques • Salons • Clinics • Small Businesses',
+    ctaText: 'Make My Business Easier to Manage →'
   },
   {
-    icon: '🤖',
+    iconType: 'bot',
     title: 'Let Your Business Handle Customers Automatically',
-    desc: 'Stay connected with your customers even when you are busy. Automate common questions, booking updates, reminders, and WhatsApp messages.',
+    desc: 'Stay connected with your customers even when you are busy. Automate common questions, booking updates, reminders, and customer messages.',
     tag: 'SMART BUSINESS',
     highlights: [
       'Automatically answer common customer questions',
@@ -81,57 +117,55 @@ const services = [
       'Remind customers about appointments',
       'Help customers even outside business hours'
     ],
-    detailedText: 'Save hours of manual effort every day. Automatic auto-replies on WhatsApp answer customer questions about pricing, availability, and location 24/7 even when your shop is closed or you are busy serving in-store clients.',
-    modalIncludes: [
-      '24/7 automated WhatsApp customer replies',
-      'Instant answers to location & pricing questions',
-      'Automatic appointment & booking reminders',
-      'Follow-up messages for customer enquiries',
-      'Custom auto-response messages',
-      'Runs automatically day and night'
-    ]
+    modalIntro: 'Your business can stay connected with customers even while you are busy serving them.',
+    modalHelps: [
+      'Answer common questions automatically',
+      'Send appointment reminders',
+      'Send customer updates',
+      'Reduce repetitive messages',
+      'Respond outside business hours'
+    ],
+    modalGets: [
+      'Smart customer assistant',
+      'Automated WhatsApp messages',
+      'Customer notifications',
+      'Appointment reminders',
+      'Follow-up messages',
+      'Common-question assistance'
+    ],
+    perfectFor: 'Busy Shops • Clinics • Salons • Restaurants • Service Businesses • Appointment-Based Businesses',
+    ctaText: 'Automate My Customer Support →'
   },
   {
-    icon: '📍',
+    iconType: 'mappin',
     title: 'Help More Customers Find You',
     desc: 'Make it easier for people nearby to discover your business when they search online for the products or services you provide.',
     tag: 'GET FOUND',
     highlights: [
-      'Show your business on Google',
-      'Display your location and business hours',
-      'Help customers discover your services',
+      'Help customers discover your business online',
+      'Show your location and business hours',
+      'Display your services and products clearly',
       'Make it easy for customers to contact you'
     ],
-    detailedText: 'When people in your city search for your products or services online, we make sure your business pops up on Google with your phone number, address, customer reviews, and map location.',
-    modalIncludes: [
-      'Google Maps & Search profile optimization',
-      'Local search visibility for your area',
-      'Display shop address, phone & working hours',
-      'Direct direction maps for new customers',
-      'Customer review & trust badges',
-      'Mobile-friendly search appearance'
-    ]
-  },
-  {
-    icon: '💬',
-    title: 'Stay Connected With Your Customers',
-    desc: 'Keep your customers coming back with simple reminders, updates, offers, and follow-up messages.',
-    tag: 'CUSTOMER CARE',
-    highlights: [
-      'Send customer updates & announcements',
-      'Send appointment & booking reminders',
-      'Follow up with customer enquiries',
-      'Keep customers connected with your business'
+    modalIntro: 'Make it easier for people nearby to discover your business when they are looking for the products or services you provide.',
+    modalHelps: [
+      'More people can discover your business',
+      'Customers can see where you are located',
+      'Customers can check your business hours',
+      'Customers can quickly contact you',
+      'Your online presence looks complete and trustworthy'
     ],
-    detailedText: 'Turn one-time visitors into repeat buyers. Send automated appointment reminders, offer announcements, and polite follow-up messages so customers keep returning to your business.',
-    modalIncludes: [
-      'Customer contact list organization',
-      'Automated appointment reminder alerts',
-      'Offer & festival greeting messages',
-      'Polite customer enquiry follow-ups',
-      'Repeat customer engagement',
-      'Friendly technical & support setup'
-    ]
+    modalGets: [
+      'Business information',
+      'Location display',
+      'Business hours',
+      'Products / services information',
+      'Contact options',
+      'Google Maps',
+      'Search-friendly business content'
+    ],
+    perfectFor: 'Local Shops • Restaurants • Clinics • Salons • Gyms • Boutiques • Service Providers',
+    ctaText: 'Help Customers Find My Business →'
   }
 ];
 
