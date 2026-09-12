@@ -1,0 +1,300 @@
+/* ============================================================
+   FOOTER BUSINESS SPEED ANIMATION — VYUHA_TECH
+   ============================================================ */
+
+.footer-speed-animation-container {
+  max-width: 1200px;
+  margin: 0 auto 3.5rem auto;
+  padding: 1.75rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(167, 139, 250, 0.18);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header inside Animation */
+.speed-anim-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.speed-anim-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #EC4899;
+  background: rgba(236, 72, 153, 0.12);
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.speed-anim-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #F8FAFC;
+  letter-spacing: -0.2px;
+  margin: 0;
+}
+
+/* Track Wrapper */
+.speed-track-wrapper {
+  position: relative;
+  height: 95px;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  background: rgba(10, 8, 24, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+/* Road / Grid Lines */
+.speed-track-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 0;
+  pointer-events: none;
+}
+
+.track-line {
+  width: 100%;
+  height: 1px;
+}
+
+.top-line, .bottom-line {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dash-line {
+  background-image: linear-gradient(to right, rgba(167, 139, 250, 0.3) 50%, transparent 50%);
+  background-size: 24px 1px;
+  background-repeat: repeat-x;
+  animation: moveDashes 1.5s linear infinite;
+}
+
+@keyframes moveDashes {
+  0% { background-position: 0 0; }
+  100% { background-position: -48px 0; }
+}
+
+/* Shared Entity Position */
+.speed-entity {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  will-change: transform;
+}
+
+.entity-label-pill {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-bottom: 4px;
+  letter-spacing: 0.03em;
+}
+
+/* 1. Walker Styling & Keyframes */
+.entity-walker {
+  top: 8px;
+  left: 0;
+  animation: walkProgress 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.entity-walker .entity-label-pill {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94A3B8;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+@keyframes walkProgress {
+  0% { transform: translateX(0%); }
+  50% { transform: translateX(180%); }
+  85% { transform: translateX(300%); }
+  100% { transform: translateX(340%); }
+}
+
+/* 2. Bicycle Styling & Keyframes */
+.entity-bicycle {
+  top: 24px;
+  left: 0;
+  animation: bikeProgress 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.entity-bicycle .entity-label-pill {
+  background: rgba(203, 213, 225, 0.15);
+  color: #CBD5E1;
+  border: 1px solid rgba(203, 213, 225, 0.3);
+}
+
+@keyframes bikeProgress {
+  0% { transform: translateX(0%); }
+  35% { transform: translateX(220%); }
+  75% { transform: translateX(450%); }
+  100% { transform: translateX(520%); }
+}
+
+/* 3. VYUHA_TECH Car Styling & Keyframes */
+.entity-car {
+  bottom: 6px;
+  left: 0;
+  animation: carAccelerate 7s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+.car-pill {
+  background: rgba(236, 72, 153, 0.18);
+  color: #F472B6;
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.2);
+}
+
+.car-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Speed light trail behind car */
+.car-speed-trail {
+  position: absolute;
+  right: 90%;
+  width: 90px;
+  height: 8px;
+  background: linear-gradient(to left, rgba(236, 72, 153, 0.7), rgba(124, 58, 237, 0.4), transparent);
+  filter: blur(2px);
+  border-radius: 4px;
+  animation: pulseTrail 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseTrail {
+  0% { opacity: 0.5; width: 70px; }
+  100% { opacity: 0.95; width: 110px; }
+}
+
+@keyframes carAccelerate {
+  0% { 
+    transform: translateX(-20%); 
+    opacity: 0.5;
+  }
+  15% {
+    transform: translateX(80%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(420%); /* Overtakes bicycle & walker */
+  }
+  80% {
+    transform: translateX(720%); /* Reaches lead */
+  }
+  92% {
+    transform: translateX(760%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(820%);
+    opacity: 0;
+  }
+}
+
+/* Footer Micro Message */
+.speed-anim-footer-msg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.msg-highlight {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, #A78BFA, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.msg-sub {
+  font-size: 0.8rem;
+  color: rgba(248, 248, 255, 0.5);
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width: 900px) {
+  .speed-entity svg {
+    transform: scale(0.85);
+    transform-origin: bottom center;
+  }
+
+  @keyframes carAccelerate {
+    0% { transform: translateX(-20%); opacity: 0.5; }
+    50% { transform: translateX(280%); }
+    80% { transform: translateX(480%); }
+    100% { transform: translateX(540%); opacity: 0; }
+  }
+
+  @keyframes bikeProgress {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(340%); }
+  }
+
+  @keyframes walkProgress {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(200%); }
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-speed-animation-container {
+    padding: 1.25rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .speed-track-wrapper {
+    height: 110px;
+  }
+
+  .speed-anim-footer-msg {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  @keyframes carAccelerate {
+    0% { transform: translateX(-20%); opacity: 0.5; }
+    50% { transform: translateX(180%); }
+    80% { transform: translateX(280%); }
+    100% { transform: translateX(330%); opacity: 0; }
+  }
+}
+
+/* PREFERS REDUCED MOTION ACCESSIBILITY FALLBACK */
+@media (prefers-reduced-motion: reduce) {
+  .entity-walker,
+  .entity-bicycle,
+  .entity-car,
+  .dash-line,
+  .car-speed-trail {
+    animation: none !important;
+  }
+
+  .entity-walker { left: 10%; }
+  .entity-bicycle { left: 45%; }
+  .entity-car { left: 75%; }
+}

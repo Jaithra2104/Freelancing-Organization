@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { FiTwitter, FiLinkedin, FiGithub, FiYoutube, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import FooterBusinessSpeedAnimation from './FooterBusinessSpeedAnimation';
 import './Footer.css';
 
 export default function Footer() {
   return (
     <footer className="global-footer">
+      <FooterBusinessSpeedAnimation />
       <div className="global-footer-grid">
         {/* Column 1: Brand & Description */}
         <div className="footer-col brand-col">
